@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Annuaire_Bloc_4.State.Navigators;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,9 +11,6 @@ namespace Annuaire_Bloc_4.ViewModel
 {
 	public class MainWindowViewModel : ViewModelBase
 	{
-		public MainWindowViewModel()
-		{
-
-		}
+		public INavigator Navigator { get; set; } = new Navigator();
 	}
 }

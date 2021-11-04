@@ -8,9 +8,15 @@ using System.Windows.Input;
 
 namespace Annuaire_Bloc_4.State.Navigators
 {
+	public enum ViewType
+	{
+		Home,
+		Sites
+	};
+
 	public interface INavigator
 	{
-		ViewModelBase CurrentViewModel { get; }
+		ViewModelBase CurrentViewModel { get; set; }
 		ICommand UpdateCurrentViewModelCommand { get; }
 
 	}

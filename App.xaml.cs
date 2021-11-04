@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Annuaire_Bloc_4.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Annuaire_Bloc_4
 		protected override void OnStartup(StartupEventArgs e)
 		{
 			Window window = new MainWindow();
+			window.DataContext = new MainWindowViewModel();
 			window.Show();
 			base.OnStartup(e);
 		}
