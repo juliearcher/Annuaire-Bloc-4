@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Annuaire_Bloc_4.View
+namespace Annuaire_Bloc_4.Views
 {
 	/// <summary>
 	/// Logique d'interaction pour SitesView.xaml

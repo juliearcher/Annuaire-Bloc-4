@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Annuaire_Bloc_4.Control
+namespace Annuaire_Bloc_4.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour NavigationBar.xaml
+	/// Logique d'interaction pour HomeView.xaml
 	/// </summary>
-	public partial class NavigationBar : UserControl
+	public partial class HomeView : UserControl
 	{
-		public NavigationBar()
+		public HomeView()
 		{
 			InitializeComponent();
 		}

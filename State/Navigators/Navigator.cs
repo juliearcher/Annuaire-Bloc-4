@@ -1,6 +1,6 @@
-﻿using Annuaire_Bloc_4.Command;
-using Annuaire_Bloc_4.Model;
-using Annuaire_Bloc_4.ViewModel;
+﻿using Annuaire_Bloc_4.Commands;
+using Annuaire_Bloc_4.Models;
+using Annuaire_Bloc_4.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,4 +1,4 @@
-﻿using Annuaire_Bloc_4.ViewModel;
+﻿using Annuaire_Bloc_4.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

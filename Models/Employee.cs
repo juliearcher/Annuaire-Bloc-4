@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.Model
+namespace Annuaire_Bloc_4.Models
 {
 	public sealed class Employee
 	{

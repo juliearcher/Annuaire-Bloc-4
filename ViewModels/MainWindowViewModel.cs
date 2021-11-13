@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Annuaire_Bloc_4.ViewModel
+namespace Annuaire_Bloc_4.ViewsModels
 {
 	public class MainWindowViewModel : ViewModelBase
 	{

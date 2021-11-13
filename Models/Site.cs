@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.Model
+namespace Annuaire_Bloc_4.Models
 {
-	class Service
+	class Site
 	{
 		public int Id { get; }
-		public string Name { get; set; }
+		public string City { get; set; }
+
 	}
 }
