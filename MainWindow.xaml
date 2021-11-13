@@ -7,7 +7,7 @@
 		xmlns:viewmodel="clr-namespace:Annuaire_Bloc_4.ViewsModels"
 		xmlns:control="clr-namespace:Annuaire_Bloc_4.Controls"
 		mc:Ignorable="d" WindowState="Maximized"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Annuaire Bloc 4" Height="450" Width="800">
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto" />

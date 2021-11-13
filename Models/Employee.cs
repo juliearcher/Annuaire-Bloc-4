@@ -15,7 +15,6 @@ namespace Annuaire_Bloc_4.Models
 			Phone = phone;
 			Mobile = mobile;
 			Mail = mail;
-
 		}
 
 		public int Id { get; }
@@ -24,6 +23,8 @@ namespace Annuaire_Bloc_4.Models
 		public string Phone { get; set; }
 		public string Mobile { get; set; }
 		public string Mail { get; set; }
+		public string Site { get; set; }
+		public string Service { get; set; }
 
 	}
 }

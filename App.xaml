@@ -7,8 +7,8 @@
     <Application.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="Resources/styles.xaml" />
-				<ResourceDictionary Source="Styles/common.xaml" />
+				<ResourceDictionary Source="Styles/Common.xaml" />
+				<ResourceDictionary Source="Styles/NavigationBar.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 
 			<DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">

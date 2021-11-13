@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Annuaire_Bloc_4.Models
 {
-	class Site
+	public class Site
 	{
 		public int Id { get; }
 		public string City { get; set; }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Annuaire_Bloc_4.Models;
+using Annuaire_Bloc_4.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,6 +11,31 @@ namespace Annuaire_Bloc_4.ViewsModels
 {
 	public class SitesViewModel : ViewModelBase
 	{
+		private readonly ISitesService		_sitesServices;
 
+		public IEnumerable<Site>	SiteList { get; set; }
+
+		public SitesViewModel(ISitesService sitesServices)
+		{
+			_sitesServices = sitesServices;
+		}
+
+		public static SitesViewModel	LoadSitesViewModel(ISitesService sitesServices)
+		{
+			SitesViewModel sitesViewModel = new SitesViewModel(sitesServices);
+			sitesViewModel.LoadSites();
+			return sitesViewModel;
+		}
+
+		private void LoadSites()
+		{
+			_sitesServices.GetAllSites().ContinueWith(task =>
+			{
+				if (task.Exception == null)
+				{
+					SiteList = task.Result;
+				}
+			});
+		}
 	}
 }

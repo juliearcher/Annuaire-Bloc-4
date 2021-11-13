@@ -10,8 +10,13 @@
     <Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
 		</Grid.RowDefinitions>
-		<Grid Grid.Row="0" Background="{StaticResource SecondaryBrush}">
+		<TextBlock Grid.Row="0" Padding="10" FontSize="28" Foreground="White" Text="Annuaire Bloc 4" Background="{StaticResource PrimaryBrush}"/>
+		<Grid Grid.Row="1" RenderOptions.EdgeMode="Aliased" Background="{StaticResource SecondaryBrush}">
+			<Grid.Resources>
+				<Style TargetType="RadioButton" BasedOn="{StaticResource NavButton}"/>
+			</Grid.Resources>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>

@@ -1,4 +1,5 @@
-﻿using Annuaire_Bloc_4.State.Navigators;
+﻿using Annuaire_Bloc_4.Services;
+using Annuaire_Bloc_4.State.Navigators;
 using Annuaire_Bloc_4.ViewsModels;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,10 @@ namespace Annuaire_Bloc_4.Commands
 				switch (viewType)
 				{
 					case ViewType.Home:
-						_navigator.CurrentViewModel = new HomeViewModel();
+						_navigator.CurrentViewModel = new HomeViewModel(SitesViewModel.LoadSitesViewModel(new SitesService()));
 						break;
 					case ViewType.Sites:
-						_navigator.CurrentViewModel = new SitesViewModel();
+						_navigator.CurrentViewModel = SitesViewModel.LoadSitesViewModel(new SitesService());
 						break;
 					case ViewType.Services:
 						_navigator.CurrentViewModel = new ServicesViewModel();
