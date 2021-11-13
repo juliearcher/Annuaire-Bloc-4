@@ -21,8 +21,8 @@
 			</Grid.ColumnDefinitions>
 
 			<RadioButton Grid.Column="0" Content="Home" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" />
-			<RadioButton Grid.Column="1" Content="Employees"/>
-			<RadioButton Grid.Column="2" Content="Services"/>
+			<RadioButton Grid.Column="1" Content="Employees"  Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Employees}"/>
+			<RadioButton Grid.Column="2" Content="Services" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Services}"/>
 			<RadioButton Grid.Column="3" Content="Sites" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Sites}" />
 		</Grid>
 	</Grid>

@@ -38,6 +38,12 @@ namespace Annuaire_Bloc_4.Commands
 					case ViewType.Sites:
 						_navigator.CurrentViewModel = new SitesViewModel();
 						break;
+					case ViewType.Services:
+						_navigator.CurrentViewModel = new ServicesViewModel();
+						break;
+					case ViewType.Employees:
+						_navigator.CurrentViewModel = new EmployeesViewModel();
+						break;
 					default:
 						break;
 				}

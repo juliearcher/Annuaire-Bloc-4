@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Annuaire_Bloc_4.ViewsModels
 {
-	public class ServicesViewModel : ViewModelBase
+	public class EmployeesViewModel : ViewModelBase
 	{
 	}
 }

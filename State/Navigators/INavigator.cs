@@ -11,7 +11,9 @@ namespace Annuaire_Bloc_4.State.Navigators
 	public enum ViewType
 	{
 		Home,
-		Sites
+		Sites,
+		Services,
+		Employees
 	};
 
 	public interface INavigator
