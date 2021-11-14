@@ -5,8 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Annuaire_Bloc_4.Controls"
 			 xmlns:nav="clr-namespace:Annuaire_Bloc_4.State.Navigators"
+			 xmlns:vm="clr-namespace:Annuaire_Bloc_4.ViewsModels"
+			 xmlns:converters="clr-namespace:Annuaire_Bloc_4.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+	<UserControl.Resources>
+		<converters:EqualValueToParameterConverter x:Key="EqualValueToParameterConverter"/>
+	</UserControl.Resources>
+	
     <Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto"/>
@@ -25,10 +32,18 @@
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 
-			<RadioButton Grid.Column="0" Content="Home" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" />
-			<RadioButton Grid.Column="1" Content="Employees"  Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Employees}"/>
-			<RadioButton Grid.Column="2" Content="Services" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Services}"/>
-			<RadioButton Grid.Column="3" Content="Sites" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Sites}" />
+			<RadioButton Grid.Column="0" Content="Home"
+						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:HomeViewModel}}"
+						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" />
+			<RadioButton Grid.Column="1" Content="Employees" 
+						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:EmployeesViewModel}}"
+						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Employees}"/>
+			<RadioButton Grid.Column="2" Content="Services"
+						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:ServicesViewModel}}"
+						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Services}"/>
+			<RadioButton Grid.Column="3"
+						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:SitesViewModel}}"
+						 Content="Sites" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Sites}" />
 		</Grid>
 	</Grid>
 </UserControl>

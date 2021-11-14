@@ -1,16 +1,15 @@
 ﻿using Annuaire_Bloc_4.Models;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Annuaire_Bloc_4.Services
 {
-	public interface ISitesService
+	public interface IServicesService
 	{
-		Task<ObservableCollection<Site>> GetAllSites();
-		Task<Site> GetSiteById(int id);
+		Task<IEnumerable<Service>> GetAllServices();
+		Task<Service> GetServiceById(int id);
 	}
 }

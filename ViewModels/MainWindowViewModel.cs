@@ -12,5 +12,10 @@ namespace Annuaire_Bloc_4.ViewsModels
 	public class MainWindowViewModel : ViewModelBase
 	{
 		public INavigator Navigator { get; set; } = new Navigator();
+
+		public MainWindowViewModel()
+		{
+			Navigator.UpdateCurrentViewModelCommand.Execute(ViewType.Home);
+		}
 	}
 }

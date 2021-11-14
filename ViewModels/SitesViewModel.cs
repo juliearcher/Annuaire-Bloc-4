@@ -2,6 +2,7 @@
 using Annuaire_Bloc_4.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Annuaire_Bloc_4.ViewsModels
 	{
 		private readonly ISitesService		_sitesServices;
 
-		public IEnumerable<Site>	SiteList { get; set; }
+		public IEnumerable<Site> SiteList { get; set; } = new ObservableCollection<Site>();
 
 		public SitesViewModel(ISitesService sitesServices)
 		{
@@ -34,6 +35,7 @@ namespace Annuaire_Bloc_4.ViewsModels
 				if (task.Exception == null)
 				{
 					SiteList = task.Result;
+					OnPropertyChanged(nameof(SiteList));
 				}
 			});
 		}
