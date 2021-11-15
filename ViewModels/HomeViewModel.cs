@@ -8,11 +8,11 @@ namespace Annuaire_Bloc_4.ViewsModels
 {
 	public class HomeViewModel : ViewModelBase
 	{
-		public SitesViewModel SitesViewModel { get; set; }
+		public SitesListViewModel SitesListViewModel { get; set; }
 
-		public HomeViewModel(SitesViewModel sitesViewModel)
+		public HomeViewModel(SitesListViewModel sitesListViewModel)
 		{
-			SitesViewModel = sitesViewModel;
+			SitesListViewModel = sitesListViewModel;
 		}
 	}
 }

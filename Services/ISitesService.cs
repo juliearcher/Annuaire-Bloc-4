@@ -10,7 +10,7 @@ namespace Annuaire_Bloc_4.Services
 {
 	public interface ISitesService
 	{
-		Task<ObservableCollection<Site>> GetAllSites();
+		Task<IEnumerable<Site>> GetAllSites();
 		Task<Site> GetSiteById(int id);
 	}
 }

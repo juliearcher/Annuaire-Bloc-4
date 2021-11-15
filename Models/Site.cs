@@ -8,7 +8,7 @@ namespace Annuaire_Bloc_4.Models
 {
 	public class Site
 	{
-		public int Id { get; }
+		public long Id { get; set; }
 		public string City { get; set; }
 
 	}

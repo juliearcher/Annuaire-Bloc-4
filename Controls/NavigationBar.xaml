@@ -32,18 +32,18 @@
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 
-			<RadioButton Grid.Column="0" Content="Home"
+			<RadioButton Grid.Column="0" Content="Accueil"
 						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:HomeViewModel}}"
 						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" />
-			<RadioButton Grid.Column="1" Content="Employees" 
+			<RadioButton Grid.Column="1" Content="Employés" 
 						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:EmployeesViewModel}}"
 						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Employees}"/>
 			<RadioButton Grid.Column="2" Content="Services"
-						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:ServicesViewModel}}"
-						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Services}"/>
-			<RadioButton Grid.Column="3"
+						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:DepartmentsViewModel}}"
+						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Departments}"/>
+			<RadioButton Grid.Column="3" Content="Sites" 
 						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:SitesViewModel}}"
-						 Content="Sites" Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Sites}" />
+						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Sites}" />
 		</Grid>
 	</Grid>
 </UserControl>

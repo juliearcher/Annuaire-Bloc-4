@@ -9,29 +9,29 @@ using System.Threading.Tasks;
 
 namespace Annuaire_Bloc_4.Services
 {
-	public class ServicesService : IServicesService
+	public class DepartmentsService : IDepartmentsService
 	{
-		public async Task<IEnumerable<Service>> GetAllServices()
+		public async Task<IEnumerable<Department>> GetAllDepartments()
 		{
 			using (HttpClient client = new HttpClient())
 			{
 				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/services");
 				string jsonResponse = await response.Content.ReadAsStringAsync();
 
-				IEnumerable<Service> serviceList = JsonConvert.DeserializeObject<IEnumerable<Service>>(jsonResponse);
-				return serviceList;
+				IEnumerable<Department> departmentList = JsonConvert.DeserializeObject<IEnumerable<Department>>(jsonResponse);
+				return departmentList;
 			}
 		}
 
-		public async Task<Service> GetServiceById(int id)
+		public async Task<Department> GetDepartmentById(int id)
 		{
 			using (HttpClient client = new HttpClient())
 			{
 				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/services/" + id);
 				string jsonResponse = await response.Content.ReadAsStringAsync();
 
-				Service service = JsonConvert.DeserializeObject<Service>(jsonResponse);
-				return service;
+				Department department = JsonConvert.DeserializeObject<Department>(jsonResponse);
+				return department;
 			}
 		}
 	}

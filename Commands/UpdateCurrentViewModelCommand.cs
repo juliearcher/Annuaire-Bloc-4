@@ -34,13 +34,13 @@ namespace Annuaire_Bloc_4.Commands
 				switch (viewType)
 				{
 					case ViewType.Home:
-						_navigator.CurrentViewModel = new HomeViewModel(SitesViewModel.LoadSitesViewModel(new SitesService()));
+						_navigator.CurrentViewModel = new HomeViewModel(SitesListViewModel.LoadSitesListViewModel(new SitesService()));
 						break;
 					case ViewType.Sites:
-						_navigator.CurrentViewModel = SitesViewModel.LoadSitesViewModel(new SitesService());
+						_navigator.CurrentViewModel = new SitesViewModel(SitesListViewModel.LoadSitesListViewModel(new SitesService()));
 						break;
-					case ViewType.Services:
-						_navigator.CurrentViewModel = new ServicesViewModel();
+					case ViewType.Departments:
+						_navigator.CurrentViewModel = new DepartmentsViewModel();
 						break;
 					case ViewType.Employees:
 						_navigator.CurrentViewModel = new EmployeesViewModel();

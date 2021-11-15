@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.ViewsModels
+namespace Annuaire_Bloc_4.Models
 {
-	public class ServicesViewModel : ViewModelBase
+	public class Department
 	{
+		public long Id { get; set; }
+		public string Name { get; set; }
 	}
 }

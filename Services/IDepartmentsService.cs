@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Annuaire_Bloc_4.Services
 {
-	public interface IServicesService
+	public interface IDepartmentsService
 	{
-		Task<IEnumerable<Service>> GetAllServices();
-		Task<Service> GetServiceById(int id);
+		Task<IEnumerable<Department>> GetAllDepartments();
+		Task<Department> GetDepartmentById(int id);
 	}
 }

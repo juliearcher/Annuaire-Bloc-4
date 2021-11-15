@@ -17,7 +17,7 @@ namespace Annuaire_Bloc_4.Models
 			Mail = mail;
 		}
 
-		public int Id { get; }
+		public long Id { get; set; }
 		public string Name { get; set; }
 		public string Surname { get; set; }
 		public string Phone { get; set; }

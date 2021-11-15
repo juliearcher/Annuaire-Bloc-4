@@ -12,7 +12,7 @@ namespace Annuaire_Bloc_4.State.Navigators
 	{
 		Home,
 		Sites,
-		Services,
+		Departments,
 		Employees
 	};
 
