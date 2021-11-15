@@ -8,15 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.ViewsModels
+namespace Annuaire_Bloc_4.ViewModels
 {
 	public class SitesViewModel : ViewModelBase
 	{
-		public SitesListViewModel SitesListViewModel { get; set; }
+		public SiteListViewModel SiteListViewModel { get; set; }
 
-		public SitesViewModel(SitesListViewModel sitesListViewModel)
+		public SitesViewModel(SiteListViewModel sitesListViewModel)
 		{
-			SitesListViewModel = sitesListViewModel;
+			SiteListViewModel = sitesListViewModel;
 		}
 	}
 }

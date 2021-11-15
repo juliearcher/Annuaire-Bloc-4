@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Annuaire_Bloc_4" xmlns:view="clr-namespace:Annuaire_Bloc_4.Views"
-		xmlns:viewmodel="clr-namespace:Annuaire_Bloc_4.ViewsModels"
+		xmlns:viewmodel="clr-namespace:Annuaire_Bloc_4.ViewModels"
 		xmlns:control="clr-namespace:Annuaire_Bloc_4.Controls"
 		mc:Ignorable="d" WindowState="Maximized"
         Title="Annuaire Bloc 4" Height="450" Width="800">

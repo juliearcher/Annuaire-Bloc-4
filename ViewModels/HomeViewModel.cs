@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.ViewsModels
+namespace Annuaire_Bloc_4.ViewModels
 {
 	public class HomeViewModel : ViewModelBase
 	{
-		public SitesListViewModel SitesListViewModel { get; set; }
+		public SiteListViewModel SiteListViewModel { get; set; }
 
-		public HomeViewModel(SitesListViewModel sitesListViewModel)
+		public HomeViewModel(SiteListViewModel sitesListViewModel)
 		{
-			SitesListViewModel = sitesListViewModel;
+			SiteListViewModel = sitesListViewModel;
 		}
 	}
 }

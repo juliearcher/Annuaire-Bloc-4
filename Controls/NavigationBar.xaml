@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Annuaire_Bloc_4.Controls"
 			 xmlns:nav="clr-namespace:Annuaire_Bloc_4.State.Navigators"
-			 xmlns:vm="clr-namespace:Annuaire_Bloc_4.ViewsModels"
+			 xmlns:vm="clr-namespace:Annuaire_Bloc_4.ViewModels"
 			 xmlns:converters="clr-namespace:Annuaire_Bloc_4.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">

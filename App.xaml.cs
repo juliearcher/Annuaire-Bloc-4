@@ -1,5 +1,5 @@
 ﻿using Annuaire_Bloc_4.Services;
-using Annuaire_Bloc_4.ViewsModels;
+using Annuaire_Bloc_4.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

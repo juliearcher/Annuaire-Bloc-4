@@ -13,6 +13,6 @@
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 		<TextBlock Grid.Row="0" Text="Accueil"/>
-		<controls:SitesList Grid.Row="1" DataContext="{Binding SitesListViewModel}"/>
+		<controls:SitesList Grid.Row="1" DataContext="{Binding SiteListViewModel}"/>
 	</Grid>
 </UserControl>

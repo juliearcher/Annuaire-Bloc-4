@@ -8,12 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.ViewsModels
+namespace Annuaire_Bloc_4.ViewModels
 {
-	public class SitesListViewModel : ViewModelBase
+	public class SiteListViewModel : ViewModelBase
 	{
 		private readonly ISitesService _sitesServices;
-		private string test;
 
 		public IEnumerable<Site> SiteList
 		{
@@ -28,15 +27,15 @@ namespace Annuaire_Bloc_4.ViewsModels
 			}
 		}
 
-		public SitesListViewModel(ISitesService sitesServices)
+		public SiteListViewModel(ISitesService sitesServices)
 		{
 			_sitesServices = sitesServices;
 			SiteList = new ObservableCollection<Site>();
 		}
 
-		public static SitesListViewModel LoadSitesListViewModel(ISitesService sitesServices)
+		public static SiteListViewModel LoadSiteListViewModel(ISitesService sitesServices)
 		{
-			SitesListViewModel sitesListViewModel = new SitesListViewModel(sitesServices);
+			SiteListViewModel sitesListViewModel = new SiteListViewModel(sitesServices);
 			sitesListViewModel.LoadSites();
 			return sitesListViewModel;
 		}
