@@ -12,24 +12,28 @@ namespace Annuaire_Bloc_4.ViewModels
 {
 	public class SiteListViewModel : ViewModelBase
 	{
-		private readonly ISitesService _sitesServices;
+		private readonly ISitesService _sitesService;
 
+		private IEnumerable<Site> _siteList;
 		public IEnumerable<Site> SiteList
 		{
 			get
 			{
-				return SiteList;
+				return _siteList;
 			}
 			set
 			{
-				SiteList = value;
-				OnPropertyChanged(nameof(SiteList));
+				if (value != null)
+				{
+					_siteList = value;
+					OnPropertyChanged(nameof(SiteList));
+				}
 			}
 		}
 
-		public SiteListViewModel(ISitesService sitesServices)
+		public SiteListViewModel(ISitesService sitesService)
 		{
-			_sitesServices = sitesServices;
+			_sitesService = sitesService;
 			SiteList = new ObservableCollection<Site>();
 		}
 
@@ -42,7 +46,7 @@ namespace Annuaire_Bloc_4.ViewModels
 
 		private void LoadSites()
 		{
-			_sitesServices.GetAllSites().ContinueWith(task =>
+			_sitesService.GetAllSites().ContinueWith(task =>
 			{
 				if (task.Exception == null)
 				{

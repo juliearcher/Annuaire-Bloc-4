@@ -8,5 +8,11 @@ namespace Annuaire_Bloc_4.ViewModels
 {
 	public class DepartmentsViewModel : ViewModelBase
 	{
+		public DepartmentListViewModel DepartmentListViewModel { get; set; }
+
+		public DepartmentsViewModel(DepartmentListViewModel departmentListViewModel)
+		{
+			DepartmentListViewModel = departmentListViewModel;
+		}
 	}
 }

@@ -12,7 +12,7 @@ namespace Annuaire_Bloc_4.Services
 {
 	public class SitesService : ISitesService
 	{
-		public async Task<ObservableCollection<Site>> GetAllSites()
+		public async Task<IEnumerable<Site>> GetAllSites()
 		{
 			using (HttpClient client = new HttpClient())
 			{

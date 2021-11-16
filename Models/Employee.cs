@@ -24,7 +24,7 @@ namespace Annuaire_Bloc_4.Models
 		public string Mobile { get; set; }
 		public string Mail { get; set; }
 		public string Site { get; set; }
-		public string Service { get; set; }
+		public string Department { get; set; }
 
 	}
 }

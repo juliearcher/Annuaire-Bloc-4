@@ -15,7 +15,7 @@ namespace Annuaire_Bloc_4.Services
 		{
 			using (HttpClient client = new HttpClient())
 			{
-				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/services");
+				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/departments");
 				string jsonResponse = await response.Content.ReadAsStringAsync();
 
 				IEnumerable<Department> departmentList = JsonConvert.DeserializeObject<IEnumerable<Department>>(jsonResponse);
@@ -27,7 +27,7 @@ namespace Annuaire_Bloc_4.Services
 		{
 			using (HttpClient client = new HttpClient())
 			{
-				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/services/" + id);
+				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/departments/" + id);
 				string jsonResponse = await response.Content.ReadAsStringAsync();
 
 				Department department = JsonConvert.DeserializeObject<Department>(jsonResponse);

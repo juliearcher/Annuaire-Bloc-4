@@ -10,9 +10,12 @@ namespace Annuaire_Bloc_4.ViewModels
 	{
 		public SiteListViewModel SiteListViewModel { get; set; }
 
-		public HomeViewModel(SiteListViewModel sitesListViewModel)
+		public DepartmentListViewModel DepartmentListViewModel { get; set; }
+
+		public HomeViewModel(SiteListViewModel sitesListViewModel, DepartmentListViewModel departmentListViewModel)
 		{
 			SiteListViewModel = sitesListViewModel;
+			DepartmentListViewModel = departmentListViewModel;
 		}
 	}
 }
