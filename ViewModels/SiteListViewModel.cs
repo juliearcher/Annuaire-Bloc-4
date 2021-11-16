@@ -1,4 +1,5 @@
-﻿using Annuaire_Bloc_4.Models;
+﻿using Annuaire_Bloc_4.Commands;
+using Annuaire_Bloc_4.Models;
 using Annuaire_Bloc_4.Services;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Annuaire_Bloc_4.ViewModels
 {
-	public class SiteListViewModel : ViewModelBase
+	public class SiteListViewModel : ViewModelBase, IListViewModel
 	{
+		public object SelectedItem { get; set; }
+
 		private readonly ISitesService _sitesService;
 
 		private IEnumerable<Site> _siteList;
@@ -54,5 +58,11 @@ namespace Annuaire_Bloc_4.ViewModels
 				}
 			});
 		}
+
+		public ICommand AddNewElement => new AddNewElement(this);
+
+		public ICommand UpdateElement => throw new NotImplementedException();
+
+		public ICommand DeleteElement => throw new NotImplementedException();
 	}
 }

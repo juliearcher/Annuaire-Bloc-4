@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Annuaire_Bloc_4.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-	<ListView Grid.Row="1" Margin="0 10 0 0" ItemsSource="{Binding SiteList}">
+	<ListView Grid.Row="1" Margin="0 10 0 0" ItemsSource="{Binding SiteList}" SelectedItem="{Binding SelectedItem}">
 		<ListView.View>
 			<GridView>
 				<GridViewColumn Header="Ville" DisplayMemberBinding="{Binding City}"/>

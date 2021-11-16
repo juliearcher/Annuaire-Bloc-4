@@ -10,12 +10,14 @@
     <Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 		<TextBlock Grid.Row="0" Text="Liste des sites" 
                    FontWeight="Bold" FontSize="18"
                    HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-		<controls:SitesList Grid.Row="1" DataContext="{Binding SiteListViewModel}"/>
+		<controls:AddUpdateDeleteButtons Grid.Row="1" DataContext="{Binding SiteListViewModel}"/>
+		<controls:SitesList Grid.Row="2" DataContext="{Binding SiteListViewModel}"/>
 	</Grid>
 </UserControl>
