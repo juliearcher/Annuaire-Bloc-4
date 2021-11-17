@@ -16,6 +16,7 @@
 		<Grid Grid.Row="1">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
 				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
@@ -28,8 +29,12 @@
 			<TextBlock Grid.Row="0" Grid.Column="1"  Text="Liste des services" 
                    FontWeight="Bold" FontSize="18"
                    HorizontalAlignment="Center" VerticalAlignment="Center" />
-			<controls:SitesList Grid.Column="0" Grid.Row="1" DataContext="{Binding SiteListViewModel}"/>
-			<controls:DepartmentList Grid.Column="1" Grid.Row="1" DataContext="{Binding DepartmentListViewModel}"/>
+
+			<controls:AddUpdateDeleteButtons Grid.Column="0" Grid.Row="1" DataContext="{Binding SiteListViewModel}"/>
+			<controls:AddUpdateDeleteButtons Grid.Column="1" Grid.Row="1" DataContext="{Binding DepartmentListViewModel}"/>
+				
+			<controls:SitesList Grid.Column="0" Grid.Row="2" DataContext="{Binding SiteListViewModel}"/>
+			<controls:DepartmentList Grid.Column="1" Grid.Row="2" DataContext="{Binding DepartmentListViewModel}"/>
 		</Grid>
 	</Grid>
 </UserControl>

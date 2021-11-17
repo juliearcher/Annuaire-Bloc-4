@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Annuaire_Bloc_4.Models
 {
-	public sealed class Employee
+	public sealed class Employee : IApiModel
 	{
 		public Employee(string name, string surname, string phone, string mobile, string mail)
 		{

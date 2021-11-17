@@ -14,7 +14,7 @@ namespace Annuaire_Bloc_4.ViewModels
 {
 	public class SiteListViewModel : ViewModelBase, IListViewModel
 	{
-		public object SelectedItem { get; set; }
+		public IApiModel SelectedItem { get; set; }
 
 		private readonly ISitesService _sitesService;
 
@@ -61,8 +61,8 @@ namespace Annuaire_Bloc_4.ViewModels
 
 		public ICommand AddNewElement => new AddNewElement(this);
 
-		public ICommand UpdateElement => throw new NotImplementedException();
+		public ICommand UpdateElement => new UpdateElement(this);
 
-		public ICommand DeleteElement => throw new NotImplementedException();
+		public ICommand DeleteElement => new DeleteElement(this);
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Annuaire_Bloc_4.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace Annuaire_Bloc_4.ViewModels
 {
 	public interface IListViewModel
 	{
-		public object SelectedItem { get; set; }
+		public IApiModel SelectedItem { get; set; }
 		public ICommand AddNewElement { get; }
 		public ICommand UpdateElement { get; }
 		public ICommand DeleteElement { get; }

@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Annuaire_Bloc_4.Commands
 {
-	class DeleteElement
+	class DeleteElement : ICommand
 	{
 		private IListViewModel _viewModel;
+
+		public event EventHandler CanExecuteChanged;
 
 		public DeleteElement(IListViewModel viewModel)
 		{
