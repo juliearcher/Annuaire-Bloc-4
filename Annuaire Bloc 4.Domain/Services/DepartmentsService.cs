@@ -1,4 +1,4 @@
-﻿using Annuaire_Bloc_4.Models;
+﻿using Annuaire_Bloc_4.Domain.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.Services
+namespace Annuaire_Bloc_4.Domain.Services
 {
 	public class DepartmentsService : IDepartmentsService
 	{

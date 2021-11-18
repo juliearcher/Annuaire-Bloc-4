@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.Models
+namespace Annuaire_Bloc_4.Domain.Models
 {
-	public class Site : IApiModel
+	public class Department : IApiModel
 	{
 		public long Id { get; set; }
-		public string City { get; set; }
-
+		public string Name { get; set; }
 	}
 }

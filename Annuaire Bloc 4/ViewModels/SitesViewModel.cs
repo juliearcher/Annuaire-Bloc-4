@@ -1,5 +1,5 @@
-﻿using Annuaire_Bloc_4.Models;
-using Annuaire_Bloc_4.Services;
+﻿using Annuaire_Bloc_4.Domain.Models;
+using Annuaire_Bloc_4.PrepAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

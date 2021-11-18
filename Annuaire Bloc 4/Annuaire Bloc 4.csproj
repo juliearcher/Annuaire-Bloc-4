@@ -11,4 +11,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Annuaire Bloc 4.Domain\Annuaire Bloc 4.Domain.csproj" />
+    <ProjectReference Include="..\Annuaire Bloc 4.PrepAPI\Annuaire Bloc 4.PrepAPI.csproj" />
+  </ItemGroup>
+
 </Project>

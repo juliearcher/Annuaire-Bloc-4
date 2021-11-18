@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Annuaire_Bloc_4.Models
+namespace Annuaire_Bloc_4.Domain.Models
 {
 	public sealed class Employee : IApiModel
 	{

@@ -1,4 +1,4 @@
-﻿using Annuaire_Bloc_4.Models;
+﻿using Annuaire_Bloc_4.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
