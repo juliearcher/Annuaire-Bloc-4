@@ -14,24 +14,18 @@ namespace AnnuaireBloc4.PrepAPI.Services
 	{
 		public async Task<IEnumerable<Employee>> GetAllEmployees()
 		{
-			using (HttpClient client = new HttpClient())
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
 			{
-				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/employees");
-				string jsonResponse = await response.Content.ReadAsStringAsync();
-
-				IEnumerable<Employee> employeeList = JsonConvert.DeserializeObject<IEnumerable<Employee>>(jsonResponse);
+				var employeeList = await client.GetAsync<IEnumerable<Employee>>("employees");
 				return employeeList;
 			}
 		}
 
 		public async Task<Employee> GetEmployeeById(int id)
 		{
-			using (HttpClient client = new HttpClient())
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
 			{
-				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/employees/" + id);
-				string jsonResponse = await response.Content.ReadAsStringAsync();
-
-				Employee employee = JsonConvert.DeserializeObject<Employee>(jsonResponse);
+				var employee = await client.GetAsync<Employee>("employees/" + id);
 				return employee;
 			}
 		}

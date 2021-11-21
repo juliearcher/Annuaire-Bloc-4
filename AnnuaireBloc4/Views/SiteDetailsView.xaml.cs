@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AnnuaireBloc4.ViewModels;
 
-namespace AnnuaireBloc4
+namespace AnnuaireBloc4.Views
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Logique d'interaction pour SiteDetailsView.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class SiteDetailsView : UserControl
 	{
-		public MainWindow(object dataContext)
+		public SiteDetailsView()
 		{
 			InitializeComponent();
-			DataContext = dataContext;
 		}
 	}
 }

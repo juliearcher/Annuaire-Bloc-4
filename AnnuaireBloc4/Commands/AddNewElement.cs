@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AnnuaireBloc4.Commands
@@ -26,6 +27,8 @@ namespace AnnuaireBloc4.Commands
 
 		public void Execute(object parameter)
 		{
+			Window window = new Window();
+			window.Show();
 			// TODO ADD NEW ELEMENT
 		}
 	}

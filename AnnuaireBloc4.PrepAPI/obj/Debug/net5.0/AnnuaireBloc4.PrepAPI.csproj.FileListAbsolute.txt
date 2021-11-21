@@ -9,7 +9,7 @@ D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\Annua
 D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.AssemblyInfoInputs.cache
 D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.AssemblyInfo.cs
 D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.csproj.CoreCompileInputs.cache
-D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.csproj.CopyComplete
 D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.dll
 D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\ref\AnnuaireBloc4.PrepAPI.dll
 D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.pdb
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.csproj.CopyComplete

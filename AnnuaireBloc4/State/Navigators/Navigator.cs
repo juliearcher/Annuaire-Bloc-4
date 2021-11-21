@@ -1,6 +1,7 @@
 ﻿using AnnuaireBloc4.Commands;
 using AnnuaireBloc4.Models;
 using AnnuaireBloc4.ViewModels;
+using AnnuaireBloc4.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,12 @@ namespace AnnuaireBloc4.State.Navigators
 			}
 		}
 
-		public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
+		public ICommand UpdateCurrentViewModelCommand { get; set; }
+
+		public Navigator(IViewModelAbstractFactory viewModelFactory)
+		{
+			UpdateCurrentViewModelCommand = new UpdateCurrentViewModelCommand(this, viewModelFactory);
+		}
 
 	}
 }

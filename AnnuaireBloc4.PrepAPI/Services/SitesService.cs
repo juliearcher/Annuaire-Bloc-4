@@ -15,24 +15,18 @@ namespace AnnuaireBloc4.PrepAPI.Services
 	{
 		public async Task<IEnumerable<Site>> GetAllSites()
 		{
-			using (HttpClient client = new HttpClient())
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
 			{
-				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/sites");
-				string jsonResponse = await response.Content.ReadAsStringAsync();
-
-				ObservableCollection<Site> siteList = JsonConvert.DeserializeObject<ObservableCollection<Site>>(jsonResponse);
+				var siteList = await client.GetAsync<IEnumerable<Site>>("sites");
 				return siteList;
 			}
 		}
 
 		public async Task<Site> GetSiteById(int id)
 		{
-			using (HttpClient client = new HttpClient())
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
 			{
-				HttpResponseMessage response = await client.GetAsync("https://localhost:5001/api/sites/" + id);
-				string jsonResponse = await response.Content.ReadAsStringAsync();
-
-				Site site = JsonConvert.DeserializeObject<Site>(jsonResponse);
+				var site = await client.GetAsync<Site>("sites/" + id);
 				return site;
 			}
 		}

@@ -27,8 +27,6 @@
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 
@@ -38,12 +36,7 @@
 			<RadioButton Grid.Column="1" Content="Employés" 
 						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:EmployeesViewModel}}"
 						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Employees}"/>
-			<RadioButton Grid.Column="2" Content="Services"
-						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:DepartmentsViewModel}}"
-						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Departments}"/>
-			<RadioButton Grid.Column="3" Content="Sites" 
-						 IsChecked="{Binding CurrentViewModel, Mode=OneWay, Converter={StaticResource EqualValueToParameterConverter}, ConverterParameter={x:Type vm:SitesViewModel}}"
-						 Command="{Binding UpdateCurrentViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Sites}" />
+
 		</Grid>
 	</Grid>
 </UserControl>
