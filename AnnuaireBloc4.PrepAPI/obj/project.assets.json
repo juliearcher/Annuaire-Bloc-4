@@ -56,8 +56,8 @@
     },
     "AnnuaireBloc4.Domain/1.0.0": {
       "type": "project",
-      "path": "../Annuaire Bloc 4.Domain/AnnuaireBloc4.Domain.csproj",
-      "msbuildProject": "../Annuaire Bloc 4.Domain/AnnuaireBloc4.Domain.csproj"
+      "path": "../AnnuaireBloc4.Domain/AnnuaireBloc4.Domain.csproj",
+      "msbuildProject": "../AnnuaireBloc4.Domain/AnnuaireBloc4.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -72,11 +72,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.PrepAPI\\AnnuaireBloc4.PrepAPI.csproj",
+      "projectUniqueName": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.PrepAPI\\AnnuaireBloc4.PrepAPI.csproj",
       "projectName": "AnnuaireBloc4.PrepAPI",
-      "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.PrepAPI\\AnnuaireBloc4.PrepAPI.csproj",
+      "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.PrepAPI\\AnnuaireBloc4.PrepAPI.csproj",
       "packagesPath": "C:\\Users\\julie\\.nuget\\packages\\",
-      "outputPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.PrepAPI\\obj\\",
+      "outputPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.PrepAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\julie\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,8 +93,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\AnnuaireBloc4.Domain.csproj": {
-              "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\AnnuaireBloc4.Domain.csproj"
+            "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.Domain\\AnnuaireBloc4.Domain.csproj": {
+              "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.Domain\\AnnuaireBloc4.Domain.csproj"
             }
           }
         }

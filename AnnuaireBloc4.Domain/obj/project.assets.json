@@ -10,19 +10,6 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-      },
-      "AnnuaireBloc4.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/AnnuaireBloc4.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/AnnuaireBloc4.Domain.dll": {}
-        }
       }
     }
   },
@@ -53,16 +40,10 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
-    },
-    "AnnuaireBloc4.Domain/1.0.0": {
-      "type": "project",
-      "path": "../Annuaire Bloc 4.Domain/AnnuaireBloc4.Domain.csproj",
-      "msbuildProject": "../Annuaire Bloc 4.Domain/AnnuaireBloc4.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "AnnuaireBloc4.Domain >= 1.0.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
   },
@@ -72,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.PrepAPI\\AnnuaireBloc4.PrepAPI.csproj",
-      "projectName": "AnnuaireBloc4.PrepAPI",
-      "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.PrepAPI\\AnnuaireBloc4.PrepAPI.csproj",
+      "projectUniqueName": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.Domain\\AnnuaireBloc4.Domain.csproj",
+      "projectName": "AnnuaireBloc4.Domain",
+      "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.Domain\\AnnuaireBloc4.Domain.csproj",
       "packagesPath": "C:\\Users\\julie\\.nuget\\packages\\",
-      "outputPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.PrepAPI\\obj\\",
+      "outputPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\AnnuaireBloc4.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\julie\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -92,11 +73,7 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\AnnuaireBloc4.Domain.csproj": {
-              "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\AnnuaireBloc4.Domain.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

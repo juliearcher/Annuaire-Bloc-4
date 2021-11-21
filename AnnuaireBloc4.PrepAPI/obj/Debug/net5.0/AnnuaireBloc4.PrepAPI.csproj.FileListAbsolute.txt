@@ -1,0 +1,15 @@
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\bin\Debug\net5.0\AnnuaireBloc4.PrepAPI.deps.json
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\bin\Debug\net5.0\AnnuaireBloc4.PrepAPI.dll
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\bin\Debug\net5.0\ref\AnnuaireBloc4.PrepAPI.dll
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\bin\Debug\net5.0\AnnuaireBloc4.PrepAPI.pdb
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\bin\Debug\net5.0\AnnuaireBloc4.Domain.dll
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\bin\Debug\net5.0\AnnuaireBloc4.Domain.pdb
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.csproj.AssemblyReference.cache
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.AssemblyInfoInputs.cache
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.AssemblyInfo.cs
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.csproj.CoreCompileInputs.cache
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.csproj.CopyComplete
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.dll
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\ref\AnnuaireBloc4.PrepAPI.dll
+D:\dev\source\repos\Annuaire Bloc 4\AnnuaireBloc4.PrepAPI\obj\Debug\net5.0\AnnuaireBloc4.PrepAPI.pdb

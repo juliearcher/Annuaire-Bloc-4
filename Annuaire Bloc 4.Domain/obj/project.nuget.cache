@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "It/ieLbRqA+yC4oSd2ljUvJLnhHT9QJs4E222x/lujCmyrMdxXiR6RDgmXmlv+M6px4i6RvcNFKs1ewaXL3P/Q==",
+  "dgSpecHash": "NKqYgk/laWNGLsu+begH6G15d24yNTaXUlCW1gy43Lm0eRwXyA3g6vOB2KgyVHcdAQhDc6j5odY2162AE6HuiQ==",
   "success": true,
-  "projectFilePath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\Annuaire Bloc 4.Domain.csproj",
+  "projectFilePath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\AnnuaireBloc4.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\julie\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

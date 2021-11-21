@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>AnnuaireBloc4</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnnuaireBloc4.Domain\AnnuaireBloc4.Domain.csproj" />
+    <ProjectReference Include="..\AnnuaireBloc4.PrepAPI\AnnuaireBloc4.PrepAPI.csproj" />
+  </ItemGroup>
+
+</Project>

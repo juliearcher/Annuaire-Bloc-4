@@ -53,9 +53,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\Annuaire Bloc 4.Domain.csproj",
-      "projectName": "Annuaire Bloc 4.Domain",
-      "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\Annuaire Bloc 4.Domain.csproj",
+      "projectUniqueName": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\AnnuaireBloc4.Domain.csproj",
+      "projectName": "AnnuaireBloc4.Domain",
+      "projectPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\AnnuaireBloc4.Domain.csproj",
       "packagesPath": "C:\\Users\\julie\\.nuget\\packages\\",
       "outputPath": "D:\\dev\\source\\repos\\Annuaire Bloc 4\\Annuaire Bloc 4.Domain\\obj\\",
       "projectStyle": "PackageReference",
