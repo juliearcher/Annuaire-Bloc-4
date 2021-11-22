@@ -1,20 +1,22 @@
-﻿using AnnuaireBloc4.ViewModels;
+﻿using AnnuaireBloc4.State.Navigators;
+using AnnuaireBloc4.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AnnuaireBloc4.Commands
 {
 	class UpdateElement : ICommand
 	{
-		private IListViewModel _viewModel;
+		private ListViewModelBase _viewModel;
 
 		public event EventHandler CanExecuteChanged;
 
-		public UpdateElement(IListViewModel viewModel)
+		public UpdateElement(ListViewModelBase viewModel)
 		{
 			_viewModel = viewModel;
 		}
@@ -26,7 +28,9 @@ namespace AnnuaireBloc4.Commands
 
 		public void Execute(object parameter)
 		{
-			// TODO UPDATE ELEMENT
+			Window window = new Window();
+			window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(ViewType.SiteForm, _viewModel.SelectedItem);
+			window.Show();
 		}
 	}
 }

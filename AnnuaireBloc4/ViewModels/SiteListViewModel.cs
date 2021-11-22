@@ -2,6 +2,7 @@
 using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Domain.Services;
 using AnnuaireBloc4.PrepAPI.Services;
+using AnnuaireBloc4.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,10 +14,8 @@ using System.Windows.Input;
 
 namespace AnnuaireBloc4.ViewModels
 {
-	public class SiteListViewModel : ViewModelBase, IListViewModel
+	public class SiteListViewModel : ListViewModelBase
 	{
-		public IApiModel SelectedItem { get; set; }
-
 		private readonly ISitesService _sitesService;
 
 		private IEnumerable<Site> _siteList;
@@ -36,15 +35,16 @@ namespace AnnuaireBloc4.ViewModels
 			}
 		}
 
-		public SiteListViewModel(ISitesService sitesService)
+		public SiteListViewModel(ISitesService sitesService, IViewModelAbstractFactory viewModelFactory)
 		{
 			_sitesService = sitesService;
 			SiteList = new ObservableCollection<Site>();
+			ViewModelFactory = viewModelFactory;
 		}
 
-		public static SiteListViewModel LoadSiteListViewModel(ISitesService sitesServices)
+		public static SiteListViewModel LoadSiteListViewModel(ISitesService sitesServices, IViewModelAbstractFactory viewModelFactory)
 		{
-			SiteListViewModel sitesListViewModel = new SiteListViewModel(sitesServices);
+			SiteListViewModel sitesListViewModel = new SiteListViewModel(sitesServices, viewModelFactory);
 			sitesListViewModel.LoadSites();
 			return sitesListViewModel;
 		}
@@ -59,11 +59,5 @@ namespace AnnuaireBloc4.ViewModels
 				}
 			});
 		}
-
-		public ICommand AddNewElement => new AddNewElement(this);
-
-		public ICommand UpdateElement => new UpdateElement(this);
-
-		public ICommand DeleteElement => new DeleteElement(this);
 	}
 }

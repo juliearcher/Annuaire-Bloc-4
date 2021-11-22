@@ -13,7 +13,8 @@ namespace AnnuaireBloc4.State.Navigators
 		Home,
 		Sites,
 		Departments,
-		Employees
+		Employees,
+		SiteForm
 	};
 
 	public interface INavigator

@@ -16,9 +16,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			_employeeService = employeesService;
 		}
 
-		public EmployeeListViewModel CreateViewModel()
+		public EmployeeListViewModel CreateViewModel(IViewModelAbstractFactory factory)
 		{
-			return EmployeeListViewModel.LoadEmployeeListViewModel(_employeeService);
+			return EmployeeListViewModel.LoadEmployeeListViewModel(_employeeService, factory);
 		}
 	}
 }

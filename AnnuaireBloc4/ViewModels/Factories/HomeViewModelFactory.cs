@@ -17,9 +17,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			_departmentListViewModelFactory = departmentListViewModelFactory;
 		}
 
-		public HomeViewModel CreateViewModel()
+		public HomeViewModel CreateViewModel(IViewModelAbstractFactory factory)
 		{
-			return new HomeViewModel(_siteListViewModelFactory.CreateViewModel(), _departmentListViewModelFactory.CreateViewModel());
+			return new HomeViewModel(_siteListViewModelFactory.CreateViewModel(factory), _departmentListViewModelFactory.CreateViewModel(factory));
 		}
 	}
 }

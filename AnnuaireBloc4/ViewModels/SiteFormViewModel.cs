@@ -1,4 +1,5 @@
 ﻿using AnnuaireBloc4.Domain.Models;
+using AnnuaireBloc4.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,12 @@ namespace AnnuaireBloc4.ViewModels
 {
 	public class SiteFormViewModel : ViewModelBase
 	{
+		private readonly ISitesService _sitesService;
 		public Site Site { get; }
 
-		public SiteFormViewModel(Site site)
+		public SiteFormViewModel(ISitesService sitesService, Site site)
 		{
+			_sitesService = sitesService;
 			Site = site;
 		}
 	}

@@ -2,6 +2,7 @@
 using AnnuaireBloc4.Domain.Services;
 using AnnuaireBloc4.Models;
 using AnnuaireBloc4.PrepAPI.Services;
+using AnnuaireBloc4.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,9 +12,8 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.ViewModels
 {
-	public class DepartmentListViewModel : ViewModelBase
+	public class DepartmentListViewModel : ListViewModelBase
 	{
-
 		private readonly IDepartmentsService _departmentsService;
 
 		private IEnumerable<Department> _departmentList;
@@ -30,15 +30,16 @@ namespace AnnuaireBloc4.ViewModels
 			}
 		}
 
-		public DepartmentListViewModel(IDepartmentsService departmentsService)
+		public DepartmentListViewModel(IDepartmentsService departmentsService, IViewModelAbstractFactory viewModelFactory)
 		{
 			_departmentsService = departmentsService;
 			DepartmentList = new ObservableCollection<Department>();
+			ViewModelFactory = viewModelFactory;
 		}
 
-		public static DepartmentListViewModel LoadDepartmentListViewModel(IDepartmentsService departmentsServices)
+		public static DepartmentListViewModel LoadDepartmentListViewModel(IDepartmentsService departmentsServices, IViewModelAbstractFactory viewModelFactory)
 		{
-			DepartmentListViewModel departmentsListViewModel = new DepartmentListViewModel(departmentsServices);
+			DepartmentListViewModel departmentsListViewModel = new DepartmentListViewModel(departmentsServices, viewModelFactory);
 			departmentsListViewModel.LoadDepartments();
 			return departmentsListViewModel;
 		}

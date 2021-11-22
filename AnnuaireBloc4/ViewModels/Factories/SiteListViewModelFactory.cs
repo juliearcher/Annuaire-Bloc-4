@@ -16,9 +16,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			_siteService = sitesService;
 		}
 
-		public SiteListViewModel CreateViewModel()
+		public SiteListViewModel CreateViewModel(IViewModelAbstractFactory factory)
 		{
-			return SiteListViewModel.LoadSiteListViewModel(_siteService);
+			return SiteListViewModel.LoadSiteListViewModel(_siteService, factory);
 		}
 	}
 }

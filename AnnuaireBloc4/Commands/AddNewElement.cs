@@ -1,4 +1,6 @@
-﻿using AnnuaireBloc4.ViewModels;
+﻿using AnnuaireBloc4.State.Navigators;
+using AnnuaireBloc4.ViewModels;
+using AnnuaireBloc4.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,9 @@ namespace AnnuaireBloc4.Commands
 	{
 		public event EventHandler CanExecuteChanged;
 
-		private IListViewModel _viewModel;
+		private ListViewModelBase _viewModel;
 
-		public AddNewElement(IListViewModel viewModel)
+		public AddNewElement(ListViewModelBase viewModel)
 		{
 			_viewModel = viewModel;
 		}
@@ -28,6 +30,7 @@ namespace AnnuaireBloc4.Commands
 		public void Execute(object parameter)
 		{
 			Window window = new Window();
+			window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(ViewType.SiteForm, null);
 			window.Show();
 			// TODO ADD NEW ELEMENT
 		}

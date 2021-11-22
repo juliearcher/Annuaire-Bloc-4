@@ -10,11 +10,11 @@ namespace AnnuaireBloc4.Commands
 {
 	class DeleteElement : ICommand
 	{
-		private IListViewModel _viewModel;
+		private ListViewModelBase _viewModel;
 
 		public event EventHandler CanExecuteChanged;
 
-		public DeleteElement(IListViewModel viewModel)
+		public DeleteElement(ListViewModelBase viewModel)
 		{
 			_viewModel = viewModel;
 		}

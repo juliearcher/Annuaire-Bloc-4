@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnnuaireBloc4.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.ViewModels.Factories
 {
-	public interface IViewModelFactory<T> where T : ViewModelBase
+	public interface IViewModelFormFactory<T> where T : ViewModelBase
 	{
-		T CreateViewModel(IViewModelAbstractFactory factory);
+		T CreateViewModel(IApiModel elem);
 	}
 }

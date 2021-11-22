@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AnnuaireBloc4.State.Navigators;
+using AnnuaireBloc4.State.NewWindow;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,9 +17,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			_employeeListViewModelFactory = employeeListViewModelFactory;
 		}
 
-		public EmployeesViewModel CreateViewModel()
+		public EmployeesViewModel CreateViewModel(IViewModelAbstractFactory factory)
 		{
-			return new EmployeesViewModel(_employeeListViewModelFactory.CreateViewModel());
+			return new EmployeesViewModel(_employeeListViewModelFactory.CreateViewModel(factory));
 		}
 	}
 }

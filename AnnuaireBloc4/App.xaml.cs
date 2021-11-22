@@ -1,7 +1,8 @@
-﻿using AnnuaireBloc4.Domain.Services;
-using AnnuaireBloc4.PrepAPI.Services;
+﻿using AnnuaireBloc4.Commands;
+using AnnuaireBloc4.Domain.Services;
 using AnnuaireBloc4.PrepAPI.Services;
 using AnnuaireBloc4.State.Navigators;
+using AnnuaireBloc4.State.NewWindow;
 using AnnuaireBloc4.ViewModels;
 using AnnuaireBloc4.ViewModels.Factories;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +44,10 @@ namespace AnnuaireBloc4
 			services.AddSingleton<IViewModelFactory<DepartmentListViewModel>, DepartmentListViewModelFactory>();
 			services.AddSingleton<IViewModelFactory<EmployeeListViewModel>, EmployeeListViewModelFactory>();
 			services.AddSingleton<IViewModelFactory<SiteListViewModel>, SiteListViewModelFactory>();
+
+			services.AddSingleton<IViewModelFormFactory<SiteFormViewModel>, SiteFormViewModelFactory>();
+
+			services.AddScoped<NewWindow>();
 
 			services.AddScoped<INavigator, Navigator>();
 			services.AddScoped<MainWindowViewModel>();
