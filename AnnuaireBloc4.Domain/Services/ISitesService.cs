@@ -12,5 +12,6 @@ namespace AnnuaireBloc4.Domain.Services
 	{
 		Task<IEnumerable<Site>> GetAllSites();
 		Task<Site> GetSiteById(int id);
+		Task<Site> CreateSite(Site site);
 	}
 }

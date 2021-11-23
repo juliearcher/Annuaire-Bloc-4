@@ -29,5 +29,14 @@ namespace AnnuaireBloc4.PrepAPI.Services
 				return employee;
 			}
 		}
+
+		public async Task<Employee> CreateEmployee(Employee employee)
+		{
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
+			{
+				var response = await client.PostAsync<Employee, Employee>("employees/", employee);
+				return response;
+			}
+		}
 	}
 }

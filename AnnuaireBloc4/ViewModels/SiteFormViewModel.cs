@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.ViewModels
 {
-	public class SiteFormViewModel : ViewModelBase
+	public class SiteFormViewModel : FormViewModelBase
 	{
 		private readonly ISitesService _sitesService;
 		public Site Site { get; }
@@ -16,7 +16,18 @@ namespace AnnuaireBloc4.ViewModels
 		public SiteFormViewModel(ISitesService sitesService, Site site)
 		{
 			_sitesService = sitesService;
-			Site = site;
+			Site = site ?? new Site();
+		}
+
+		public override void SendToAPI(bool close)
+		{
+			_sitesService.CreateSite(Site).ContinueWith(task =>
+			{
+				if (task.Exception == null)
+				{
+					Site Result = task.Result;
+				}
+			}); ;
 		}
 	}
 }

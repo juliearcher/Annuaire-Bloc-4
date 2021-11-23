@@ -11,5 +11,6 @@ namespace AnnuaireBloc4.Domain.Services
 	{
 		Task<IEnumerable<Employee>> GetAllEmployees();
 		Task<Employee> GetEmployeeById(int id);
+		Task<Employee> CreateEmployee(Employee employee);
 	}
 }

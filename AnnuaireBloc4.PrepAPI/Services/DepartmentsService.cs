@@ -29,5 +29,14 @@ namespace AnnuaireBloc4.PrepAPI.Services
 				return department;
 			}
 		}
+
+		public async Task<Department> CreateDepartment(Department department)
+		{
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
+			{
+				var response = await client.PostAsync<Department, Department>("departments/", department);
+				return response;
+			}
+		}
 	}
 }

@@ -30,5 +30,14 @@ namespace AnnuaireBloc4.PrepAPI.Services
 				return site;
 			}
 		}
+
+		public async Task<Site> CreateSite(Site site)
+		{
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
+			{
+				var response = await client.PostAsync<Site, Site>("sites/", site);
+				return response;
+			}
+		}
 	}
 }

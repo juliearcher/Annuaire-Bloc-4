@@ -11,5 +11,6 @@ namespace AnnuaireBloc4.Domain.Services
 	{
 		Task<IEnumerable<Department>> GetAllDepartments();
 		Task<Department> GetDepartmentById(int id);
+		Task<Department> CreateDepartment(Department department);
 	}
 }
