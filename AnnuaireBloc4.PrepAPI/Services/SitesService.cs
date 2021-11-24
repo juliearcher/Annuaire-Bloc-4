@@ -22,7 +22,7 @@ namespace AnnuaireBloc4.PrepAPI.Services
 			}
 		}
 
-		public async Task<Site> GetSiteById(int id)
+		public async Task<Site> GetSiteById(long id)
 		{
 			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
 			{
@@ -37,6 +37,16 @@ namespace AnnuaireBloc4.PrepAPI.Services
 			{
 				var response = await client.PostAsync<Site, Site>("sites/", site);
 				return response;
+			}
+		}
+
+		public async Task<bool> UpdateSite(Site site)
+		{
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
+			{
+				//site.City = "Gréasque";
+				int response = await client.PutAsync<Site, int>("sites/" + site.Id, site);
+				return response == 200;
 			}
 		}
 	}

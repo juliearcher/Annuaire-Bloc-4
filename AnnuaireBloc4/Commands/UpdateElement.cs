@@ -28,6 +28,8 @@ namespace AnnuaireBloc4.Commands
 
 		public void Execute(object parameter)
 		{
+			if (_viewModel.SelectedItem == null)
+				return;
 			Window window = new Window();
 			window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(ViewType.SiteForm, _viewModel.SelectedItem);
 			window.Show();

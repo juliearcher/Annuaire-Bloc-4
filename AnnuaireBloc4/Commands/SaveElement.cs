@@ -1,9 +1,12 @@
-﻿using AnnuaireBloc4.ViewModels;
+﻿using AnnuaireBloc4.Domain.Models;
+using AnnuaireBloc4.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace AnnuaireBloc4.Commands
@@ -26,9 +29,23 @@ namespace AnnuaireBloc4.Commands
 			return true;
 		}
 
-		public void Execute(object parameter)
+		public async void Execute(object parameter)
 		{
-			_viewModel.SendToAPI(_closeWindow);
+			// TODO CHECK API RESULT CODE
+			if (!_viewModel.IsValid())
+			{
+				return;
+			}
+			try
+			{
+				await _viewModel.SendToAPI();
+				if (parameter is Window && _closeWindow)
+					_viewModel.CloseWindow((Window)parameter);
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show(e.Message);
+			}
 		}
 	}
 }

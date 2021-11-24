@@ -5,29 +5,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace AnnuaireBloc4.ViewModels
 {
 	public class SiteFormViewModel : FormViewModelBase
 	{
 		private readonly ISitesService _sitesService;
-		public Site Site { get; }
+		private Site _site;
+		public Site Site
+		{
+			get
+			{
+				return _site;
+			}
+			set
+			{
+				_site = value;
+				OnPropertyChanged(nameof(Site));
+			}
+		}
 
 		public SiteFormViewModel(ISitesService sitesService, Site site)
 		{
 			_sitesService = sitesService;
+			_mode = site == null ? EditMode.CREATE : EditMode.UPDATE;
 			Site = site ?? new Site();
 		}
 
-		public override void SendToAPI(bool close)
+		public async override Task<bool> SendToAPI()
 		{
-			_sitesService.CreateSite(Site).ContinueWith(task =>
+			if (_mode == EditMode.CREATE)
 			{
-				if (task.Exception == null)
-				{
-					Site Result = task.Result;
-				}
-			}); ;
+				MessageBox.Show("CREATE");
+			//	await _sitesService.CreateSite(Site);
+			}
+			else
+			{
+				MessageBox.Show("UPDATE " + Site.City);
+				//	await _sitesService.UpdateSite(Site);
+			}
+			return true;
+		}
+
+		public override bool IsValid()
+		{
+			return true;
 		}
 	}
 }

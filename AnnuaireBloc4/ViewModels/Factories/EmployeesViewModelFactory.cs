@@ -1,5 +1,4 @@
 ﻿using AnnuaireBloc4.State.Navigators;
-using AnnuaireBloc4.State.NewWindow;
 using System;
 using System.Collections.Generic;
 using System.Linq;

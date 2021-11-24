@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.PrepAPI
 {
+	// TODO CHECK RESULT CODE
 	public class AnnuaireHttpClient : HttpClient
 	{
 		public AnnuaireHttpClient()
@@ -27,10 +28,19 @@ namespace AnnuaireBloc4.PrepAPI
 		{
 			StringContent content = new StringContent(JsonConvert.SerializeObject(elem), Encoding.UTF8, "application/json");
 
-			var response = await PostAsync(uri, content);
+			HttpResponseMessage response = await GetAsync(uri + "/1");
+			//HttpResponseMessage response = await PostAsync(uri, content);
 			string jsonResponse = await response.Content.ReadAsStringAsync();
-
 			return JsonConvert.DeserializeObject<T>(jsonResponse);
+		}
+
+		public async Task<int> PutAsync<U, T>(string uri, U elem) where U : IApiModel
+		{
+			StringContent content = new StringContent(JsonConvert.SerializeObject(elem), Encoding.UTF8, "application/json");
+
+			HttpResponseMessage response = await GetAsync(uri);
+			//HttpResponseMessage response = await PutAsync(uri, content);
+			return (int)response.StatusCode;
 		}
 	}
 }

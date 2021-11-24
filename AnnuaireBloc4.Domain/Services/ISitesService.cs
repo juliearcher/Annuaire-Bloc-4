@@ -11,7 +11,8 @@ namespace AnnuaireBloc4.Domain.Services
 	public interface ISitesService
 	{
 		Task<IEnumerable<Site>> GetAllSites();
-		Task<Site> GetSiteById(int id);
+		Task<Site> GetSiteById(long id);
 		Task<Site> CreateSite(Site site);
+		Task<bool> UpdateSite(Site site);
 	}
 }
