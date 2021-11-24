@@ -16,11 +16,13 @@ namespace AnnuaireBloc4.Commands
 		public event EventHandler CanExecuteChanged;
 
 		private FormViewModelBase _viewModel;
+		private bool _save;
 		private bool _closeWindow;
 
-		public SaveElement(FormViewModelBase viewModel, bool closeWindow = false)
+		public SaveElement(FormViewModelBase viewModel, bool save = true, bool closeWindow = false)
 		{
 			_viewModel = viewModel;
+			_save = save;
 			_closeWindow = closeWindow;
 		}
 
@@ -32,13 +34,17 @@ namespace AnnuaireBloc4.Commands
 		public async void Execute(object parameter)
 		{
 			// TODO CHECK API RESULT CODE
-			if (!_viewModel.IsValid())
+			if (_save && !_viewModel.IsValid())
 			{
 				return;
 			}
 			try
 			{
-				await _viewModel.SendToAPI();
+				if (_save)
+				{
+					await _viewModel.SendToAPI();
+					_viewModel.ListViewModelBase.LoadList();
+				}
 				if (parameter is Window && _closeWindow)
 					_viewModel.CloseWindow((Window)parameter);
 			}

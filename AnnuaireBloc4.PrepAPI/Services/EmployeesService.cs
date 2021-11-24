@@ -38,5 +38,23 @@ namespace AnnuaireBloc4.PrepAPI.Services
 				return response;
 			}
 		}
+
+		public async Task<bool> UpdateEmployee(Employee employee)
+		{
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
+			{
+				int response = await client.PutAsync<Employee, int>("employees/" + employee.Id, employee);
+				return response == 200;
+			}
+		}
+
+		public async Task<bool> DeleteEmployee(long id)
+		{
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
+			{
+				int response = await client.CustomDeleteAsync("employees/" + id);
+				return response == 200;
+			}
+		}
 	}
 }

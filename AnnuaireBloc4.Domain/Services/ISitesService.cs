@@ -14,5 +14,6 @@ namespace AnnuaireBloc4.Domain.Services
 		Task<Site> GetSiteById(long id);
 		Task<Site> CreateSite(Site site);
 		Task<bool> UpdateSite(Site site);
+		Task<bool> DeleteSite(long id);
 	}
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AnnuaireBloc4.Commands
@@ -24,9 +25,23 @@ namespace AnnuaireBloc4.Commands
 			return true;
 		}
 
-		public void Execute(object parameter)
+		public async void Execute(object parameter)
 		{
-			// TODO ADD NEW ELEMENT
+			if (_viewModel.SelectedItem == null)
+				return;
+			var result = MessageBox.Show("Voulez vous supprimer cet élément ?", "Supprimer", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
+			if (result == MessageBoxResult.Yes)
+			{
+				try
+				{
+					await _viewModel.DeleteSelectedItem();
+					_viewModel.LoadList();
+				}
+				catch (Exception e)
+				{
+					MessageBox.Show(e.Message);
+				}
+			}
 		}
 	}
 }

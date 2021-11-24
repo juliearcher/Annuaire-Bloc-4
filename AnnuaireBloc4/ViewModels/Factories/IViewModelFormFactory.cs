@@ -9,6 +9,6 @@ namespace AnnuaireBloc4.ViewModels.Factories
 {
 	public interface IViewModelFormFactory<T> where T : ViewModelBase
 	{
-		T CreateViewModel(IApiModel elem);
+		T CreateViewModel(ListViewModelBase viewModelBase, IApiModel elem);
 	}
 }

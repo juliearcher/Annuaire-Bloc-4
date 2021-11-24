@@ -21,12 +21,12 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			_siteFormViewModelFactory = siteFormViewModelFactory;
 		}
 
-		public ViewModelBase CreateFormViewModel(ViewType viewType, IApiModel elem)
+		public ViewModelBase CreateFormViewModel(ListViewModelBase viewModelBase, ViewType viewType, IApiModel elem)
 		{
 			switch (viewType)
 			{
 				case ViewType.SiteForm:
-					return _siteFormViewModelFactory.CreateViewModel(elem);
+					return _siteFormViewModelFactory.CreateViewModel(viewModelBase, elem);
 				default:
 					throw new ArgumentException("Invalid ViewType : .", "viewType");
 			}

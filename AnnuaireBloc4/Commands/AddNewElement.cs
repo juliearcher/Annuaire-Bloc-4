@@ -30,9 +30,8 @@ namespace AnnuaireBloc4.Commands
 		public void Execute(object parameter)
 		{
 			Window window = new Window();
-			window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(ViewType.SiteForm, null);
+			window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.SiteForm, null);
 			window.Show();
-			// TODO ADD NEW ELEMENT
 		}
 	}
 }

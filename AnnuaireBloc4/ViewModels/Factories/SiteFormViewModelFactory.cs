@@ -17,9 +17,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			_siteService = sitesService;
 		}
 
-		public SiteFormViewModel CreateViewModel(IApiModel elem)
+		public SiteFormViewModel CreateViewModel(ListViewModelBase viewModelBase, IApiModel elem)
 		{
-			return new SiteFormViewModel(_siteService, (Site)elem);
+			return new SiteFormViewModel(_siteService, viewModelBase, (Site)elem);
 		}
 	}
 }

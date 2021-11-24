@@ -55,5 +55,15 @@ namespace AnnuaireBloc4.ViewModels
 				}
 			});
 		}
+
+		override public void LoadList()
+		{
+			this.LoadEmployees();
+		}
+
+		override public async Task<bool> DeleteSelectedItem()
+		{
+			return await _employeesService.DeleteEmployee(SelectedItem == null ? 0 : SelectedItem.Id);
+		}
 	}
 }

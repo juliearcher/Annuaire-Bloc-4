@@ -11,6 +11,6 @@ namespace AnnuaireBloc4.ViewModels.Factories
 	public interface IViewModelAbstractFactory
 	{
 		ViewModelBase CreateViewModel(ViewType viewType);
-		ViewModelBase CreateFormViewModel(ViewType viewType, IApiModel elem);
+		ViewModelBase CreateFormViewModel(ListViewModelBase viewModelBase, ViewType viewType, IApiModel elem);
 	}
 }

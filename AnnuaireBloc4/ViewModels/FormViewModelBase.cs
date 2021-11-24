@@ -20,10 +20,13 @@ namespace AnnuaireBloc4.ViewModels
 
 		protected EditMode _mode = EditMode.UPDATE;
 
+		public ListViewModelBase ListViewModelBase { get; protected set; }
+
 		public abstract Task<bool> SendToAPI();
 		public abstract bool IsValid();
-		public ICommand SaveElement => new SaveElement(this, false);
-		public ICommand SaveElementAndClose => new SaveElement(this, true);
+		public ICommand SaveElement => new SaveElement(this);
+		public ICommand SaveElementAndClose => new SaveElement(this, closeWindow : true);
+		public ICommand CloseWindowCommand => new SaveElement(this, save : false, closeWindow : true);
 		public void CloseWindow(Window window) => window.Close();
 	}
 }

@@ -10,9 +10,11 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="auto"/>
 			<ColumnDefinition Width="auto"/>
+			<ColumnDefinition Width="auto"/>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 		<Button Grid.Column="0" Command="{Binding SaveElement}" Content="Save" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
 		<Button Grid.Column="1" Command="{Binding SaveElementAndClose}" Content="Save and close" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
+		<Button Grid.Column="2" Command="{Binding CloseWindowCommand}" Content="Close" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" />
 	</Grid>
 </UserControl>

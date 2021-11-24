@@ -1,4 +1,5 @@
-﻿using AnnuaireBloc4.Domain.Models;
+﻿using AnnuaireBloc4.Domain;
+using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -26,9 +27,10 @@ namespace AnnuaireBloc4.ViewModels
 			}
 		}
 
-		public SiteFormViewModel(ISitesService sitesService, Site site)
+		public SiteFormViewModel(ISitesService sitesService, ListViewModelBase listViewModelBase, Site site)
 		{
 			_sitesService = sitesService;
+			ListViewModelBase = listViewModelBase;
 			_mode = site == null ? EditMode.CREATE : EditMode.UPDATE;
 			Site = site ?? new Site();
 		}
@@ -37,13 +39,11 @@ namespace AnnuaireBloc4.ViewModels
 		{
 			if (_mode == EditMode.CREATE)
 			{
-				MessageBox.Show("CREATE");
-			//	await _sitesService.CreateSite(Site);
+				await _sitesService.CreateSite(Site);
 			}
 			else
 			{
-				MessageBox.Show("UPDATE " + Site.City);
-				//	await _sitesService.UpdateSite(Site);
+				await _sitesService.UpdateSite(Site);
 			}
 			return true;
 		}

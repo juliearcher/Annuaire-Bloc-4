@@ -44,9 +44,17 @@ namespace AnnuaireBloc4.PrepAPI.Services
 		{
 			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
 			{
-				//site.City = "Gréasque";
 				int response = await client.PutAsync<Site, int>("sites/" + site.Id, site);
-				return response == 200;
+				return response == 204;
+			}
+		}
+
+		public async Task<bool> DeleteSite(long id)
+		{
+			using (AnnuaireHttpClient client = new AnnuaireHttpClient())
+			{
+				int response = await client.CustomDeleteAsync("sites/" + id);
+				return response == 204;
 			}
 		}
 	}
