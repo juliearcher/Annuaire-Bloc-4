@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.ViewModels.Factories
 {
-	class HomeViewModelFactory : IViewModelFactory<HomeViewModel>
+	class HomeViewModelFactory : IViewModelListFactory<HomeViewModel>
 	{
-		private IViewModelFactory<SiteListViewModel> _siteListViewModelFactory;
-		private IViewModelFactory<DepartmentListViewModel> _departmentListViewModelFactory;
+		private IViewModelListFactory<SiteListViewModel> _siteListViewModelFactory;
+		private IViewModelListFactory<DepartmentListViewModel> _departmentListViewModelFactory;
 
-		public HomeViewModelFactory(IViewModelFactory<SiteListViewModel> siteListViewModelFactory, IViewModelFactory<DepartmentListViewModel> departmentListViewModelFactory)
+		public HomeViewModelFactory(IViewModelListFactory<SiteListViewModel> siteListViewModelFactory, IViewModelListFactory<DepartmentListViewModel> departmentListViewModelFactory)
 		{
 			_siteListViewModelFactory = siteListViewModelFactory;
 			_departmentListViewModelFactory = departmentListViewModelFactory;

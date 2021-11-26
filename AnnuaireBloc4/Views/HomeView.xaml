@@ -4,37 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AnnuaireBloc4.Views"
+			 xmlns:viewmodel="clr-namespace:AnnuaireBloc4.ViewModels"
 			 xmlns:controls="clr-namespace:AnnuaireBloc4.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+
+	<Grid>
 		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
 			<RowDefinition Height="auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<TextBlock Grid.Row="0" Text="Accueil"/>
-		<Grid Grid.Row="1">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="auto"/>
-				<RowDefinition Height="auto"/>
-				<RowDefinition Height="*"/>
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-			</Grid.ColumnDefinitions>
-			<TextBlock Grid.Row="0" Grid.Column="0"  Text="Liste des sites" 
-                   FontWeight="Bold" FontSize="18"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" />
-			<TextBlock Grid.Row="0" Grid.Column="1"  Text="Liste des services" 
-                   FontWeight="Bold" FontSize="18"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Grid.Row="0" Grid.Column="0"  Text="Liste des sites" 
+                FontWeight="Bold" FontSize="18"
+                HorizontalAlignment="Center" VerticalAlignment="Center" />
+		<TextBlock Grid.Row="0" Grid.Column="1"  Text="Liste des services" 
+                FontWeight="Bold" FontSize="18"
+                HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-			<controls:AddUpdateDeleteButtons Grid.Column="0" Grid.Row="1" DataContext="{Binding SiteListViewModel}"/>
-			<controls:AddUpdateDeleteButtons Grid.Column="1" Grid.Row="1" DataContext="{Binding DepartmentListViewModel}"/>
-				
-			<controls:SitesList Grid.Column="0" Grid.Row="2" DataContext="{Binding SiteListViewModel}"/>
-			<controls:DepartmentList Grid.Column="1" Grid.Row="2" DataContext="{Binding DepartmentListViewModel}"/>
-		</Grid>
+		<controls:AddUpdateDeleteButtons Grid.Column="0" Grid.Row="1" DataContext="{Binding SiteListViewModel}"/>
+		<controls:AddUpdateDeleteButtons Grid.Column="1" Grid.Row="1" DataContext="{Binding DepartmentListViewModel}"/>
+
+		<controls:SearchBox Grid.Column="0" Grid.Row="2" DataContext="{Binding SiteListViewModel}"/>
+		<controls:SearchBox Grid.Column="1" Grid.Row="2" DataContext="{Binding DepartmentListViewModel}"/>
+
+		<controls:SitesList Grid.Column="0" Grid.Row="3" DataContext="{Binding SiteListViewModel}"/>
+		<controls:DepartmentList Grid.Column="1" Grid.Row="3" DataContext="{Binding DepartmentListViewModel}"/>
+
 	</Grid>
 </UserControl>

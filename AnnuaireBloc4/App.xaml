@@ -21,6 +21,15 @@
 			<DataTemplate DataType="{x:Type viewmodels:SiteFormViewModel}">
 				<views:SiteFormView/>
 			</DataTemplate>
+			<DataTemplate DataType="{x:Type viewmodels:DepartmentFormViewModel}">
+				<views:DepartmentFormView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type viewmodels:EmployeeFormViewModel}">
+				<views:EmployeeFormView/>
+			</DataTemplate>
+			<DataTemplate DataType="{x:Type viewmodels:AdminPasswordWindowViewModel}">
+				<views:AdminPasswordPrompt/>
+			</DataTemplate>
 		</ResourceDictionary>
     </Application.Resources>
 </Application>

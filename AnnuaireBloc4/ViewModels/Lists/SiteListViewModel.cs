@@ -18,6 +18,7 @@ namespace AnnuaireBloc4.ViewModels
 	{
 		private readonly ISitesService _sitesService;
 
+		private IEnumerable<Site> _siteInitialList;
 		private IEnumerable<Site> _siteList;
 		public IEnumerable<Site> SiteList
 		{
@@ -35,10 +36,28 @@ namespace AnnuaireBloc4.ViewModels
 			}
 		}
 
+		private string _searchFilter;
+		public string SearchFilter
+		{
+			get
+			{
+				return _searchFilter;
+			}
+			set
+			{
+				if (_searchFilter != value)
+				{
+					_searchFilter = value.ToLower();
+					SiteList = _siteInitialList.Where(d => d.City.ToLower().Contains(_searchFilter));
+					OnPropertyChanged(nameof(SearchFilter));
+				}
+			}
+		}
+
 		public SiteListViewModel(ISitesService sitesService, IViewModelAbstractFactory viewModelFactory)
 		{
 			_sitesService = sitesService;
-			SiteList = new ObservableCollection<Site>();
+			_siteInitialList = new ObservableCollection<Site>();
 			ViewModelFactory = viewModelFactory;
 		}
 
@@ -55,7 +74,8 @@ namespace AnnuaireBloc4.ViewModels
 			{
 				if (task.Exception == null)
 				{
-					SiteList = task.Result;
+					_siteInitialList = task.Result;
+					SiteList = _siteInitialList;
 				}
 			});
 		}

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:AnnuaireBloc4.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-	<ListView Grid.Row="1" ItemsSource="{Binding EmployeeList}">
+	<ListView Grid.Row="1" ItemsSource="{Binding EmployeeList}" SelectedItem="{Binding SelectedItem}">
 		<ListView.View>
 			<GridView>
 				<GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Surname}"/>

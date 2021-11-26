@@ -38,13 +38,15 @@ namespace AnnuaireBloc4
 			services.AddSingleton<ISitesService, SitesService>();
 
 			services.AddSingleton<IViewModelAbstractFactory, ViewModelAbstractFactory>();
-			services.AddSingleton<IViewModelFactory<HomeViewModel>, HomeViewModelFactory>();
-			services.AddSingleton<IViewModelFactory<EmployeesViewModel>, EmployeesViewModelFactory>();
-			services.AddSingleton<IViewModelFactory<DepartmentListViewModel>, DepartmentListViewModelFactory>();
-			services.AddSingleton<IViewModelFactory<EmployeeListViewModel>, EmployeeListViewModelFactory>();
-			services.AddSingleton<IViewModelFactory<SiteListViewModel>, SiteListViewModelFactory>();
+			services.AddSingleton<IViewModelListFactory<HomeViewModel>, HomeViewModelFactory>();
+			services.AddSingleton<IViewModelListFactory<EmployeesViewModel>, EmployeesViewModelFactory>();
+			services.AddSingleton<IViewModelListFactory<DepartmentListViewModel>, DepartmentListViewModelFactory>();
+			services.AddSingleton<IViewModelListFactory<EmployeeListViewModel>, EmployeeListViewModelFactory>();
+			services.AddSingleton<IViewModelListFactory<SiteListViewModel>, SiteListViewModelFactory>();
 
 			services.AddSingleton<IViewModelFormFactory<SiteFormViewModel>, SiteFormViewModelFactory>();
+			services.AddSingleton<IViewModelFormFactory<DepartmentFormViewModel>, DepartmentFormViewModelFactory>();
+			services.AddSingleton<IViewModelFormFactory<EmployeeFormViewModel>, EmployeeFormViewModelFactory>();
 
 			services.AddScoped<INavigator, Navigator>();
 			services.AddScoped<MainWindowViewModel>();

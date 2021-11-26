@@ -10,15 +10,19 @@ namespace AnnuaireBloc4.ViewModels.Factories
 {
 	public class ViewModelAbstractFactory : IViewModelAbstractFactory
 	{
-		private readonly IViewModelFactory<HomeViewModel> _homeViewModelFactory;
-		private readonly IViewModelFactory<EmployeesViewModel> _employeesViewModelFactory;
+		private readonly IViewModelListFactory<HomeViewModel> _homeViewModelFactory;
+		private readonly IViewModelListFactory<EmployeesViewModel> _employeesViewModelFactory;
 		private readonly IViewModelFormFactory<SiteFormViewModel> _siteFormViewModelFactory;
+		private readonly IViewModelFormFactory<DepartmentFormViewModel> _departmentFormViewModelFactory;
+		private readonly IViewModelFormFactory<EmployeeFormViewModel> _employeeFormViewModelFactory;
 
-		public ViewModelAbstractFactory(IViewModelFactory<HomeViewModel> homeViewModelFactory, IViewModelFactory<EmployeesViewModel> employeesViewModelFactory, IViewModelFormFactory<SiteFormViewModel> siteFormViewModelFactory)
+		public ViewModelAbstractFactory(IViewModelListFactory<HomeViewModel> homeViewModelFactory, IViewModelListFactory<EmployeesViewModel> employeesViewModelFactory, IViewModelFormFactory<SiteFormViewModel> siteFormViewModelFactory, IViewModelFormFactory<DepartmentFormViewModel> departmentFormViewModelFactory, IViewModelFormFactory<EmployeeFormViewModel> employeeFormViewModelFactory)
 		{
 			_homeViewModelFactory = homeViewModelFactory;
 			_employeesViewModelFactory = employeesViewModelFactory;
 			_siteFormViewModelFactory = siteFormViewModelFactory;
+			_departmentFormViewModelFactory = departmentFormViewModelFactory;
+			_employeeFormViewModelFactory = employeeFormViewModelFactory;
 		}
 
 		public ViewModelBase CreateFormViewModel(ListViewModelBase viewModelBase, ViewType viewType, IApiModel elem)
@@ -27,6 +31,10 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			{
 				case ViewType.SiteForm:
 					return _siteFormViewModelFactory.CreateViewModel(viewModelBase, elem);
+				case ViewType.DepartmentForm:
+					return _departmentFormViewModelFactory.CreateViewModel(viewModelBase, elem);
+				case ViewType.EmployeeForm:
+					return _employeeFormViewModelFactory.CreateViewModel(viewModelBase, elem);
 				default:
 					throw new ArgumentException("Invalid ViewType : .", "viewType");
 			}

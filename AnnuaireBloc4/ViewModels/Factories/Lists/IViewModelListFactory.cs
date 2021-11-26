@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.ViewModels.Factories
 {
-	public interface IViewModelFactory<T> where T : ViewModelBase
+	public interface IViewModelListFactory<T> where T : ViewModelBase
 	{
 		T CreateViewModel(IViewModelAbstractFactory factory);
 	}

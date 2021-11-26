@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AnnuaireBloc4.Views
 {
 	/// <summary>
-	/// Logique d'interaction pour SiteDetailsView.xaml
+	/// Logique d'interaction pour DepartmentFormView.xaml
 	/// </summary>
-	public partial class SiteDetailsView : UserControl
+	public partial class DepartmentFormView : UserControl
 	{
-		public SiteDetailsView()
+		public DepartmentFormView()
 		{
 			InitializeComponent();
 		}

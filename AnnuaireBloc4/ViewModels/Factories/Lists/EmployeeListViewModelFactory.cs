@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.ViewModels.Factories
 {
-	public class EmployeeListViewModelFactory : IViewModelFactory<EmployeeListViewModel>
+	public class EmployeeListViewModelFactory : IViewModelListFactory<EmployeeListViewModel>
 	{
 		private readonly IEmployeesService _employeeService;
 

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.ViewModels.Factories
 {
-	public class EmployeesViewModelFactory : IViewModelFactory<EmployeesViewModel>
+	public class EmployeesViewModelFactory : IViewModelListFactory<EmployeesViewModel>
 	{
-		private IViewModelFactory<EmployeeListViewModel> _employeeListViewModelFactory;
+		private IViewModelListFactory<EmployeeListViewModel> _employeeListViewModelFactory;
 
-		public EmployeesViewModelFactory(IViewModelFactory<EmployeeListViewModel> employeeListViewModelFactory)
+		public EmployeesViewModelFactory(IViewModelListFactory<EmployeeListViewModel> employeeListViewModelFactory)
 		{
 			_employeeListViewModelFactory = employeeListViewModelFactory;
 		}

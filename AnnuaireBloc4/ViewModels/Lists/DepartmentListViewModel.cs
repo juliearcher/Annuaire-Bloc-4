@@ -6,9 +6,11 @@ using AnnuaireBloc4.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 
 namespace AnnuaireBloc4.ViewModels
 {
@@ -16,6 +18,8 @@ namespace AnnuaireBloc4.ViewModels
 	{
 		private readonly IDepartmentsService _departmentsService;
 
+
+		private IEnumerable<Department> _departmentInitialList;
 		private IEnumerable<Department> _departmentList;
 		public IEnumerable<Department> DepartmentList
 		{
@@ -29,11 +33,28 @@ namespace AnnuaireBloc4.ViewModels
 				OnPropertyChanged(nameof(DepartmentList));
 			}
 		}
+		private string _searchFilter;
+		public string SearchFilter
+		{
+			get
+			{
+				return _searchFilter;
+			}
+			set
+			{
+				if (_searchFilter != value)
+				{
+					_searchFilter = value.ToLower();
+					DepartmentList = _departmentInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter));
+					OnPropertyChanged(nameof(SearchFilter));
+				}
+			}
+		}
 
 		public DepartmentListViewModel(IDepartmentsService departmentsService, IViewModelAbstractFactory viewModelFactory)
 		{
 			_departmentsService = departmentsService;
-			DepartmentList = new ObservableCollection<Department>();
+			_departmentInitialList = new ObservableCollection<Department>();
 			ViewModelFactory = viewModelFactory;
 		}
 
@@ -50,7 +71,8 @@ namespace AnnuaireBloc4.ViewModels
 			{
 				if (task.Exception == null)
 				{
-					DepartmentList = task.Result;
+					_departmentInitialList = task.Result;
+					DepartmentList = _departmentInitialList;
 				}
 			});
 		}

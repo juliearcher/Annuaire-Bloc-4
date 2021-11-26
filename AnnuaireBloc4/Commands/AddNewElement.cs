@@ -30,7 +30,14 @@ namespace AnnuaireBloc4.Commands
 		public void Execute(object parameter)
 		{
 			Window window = new Window();
-			window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.SiteForm, null);
+			if (_viewModel is SiteListViewModel)
+				window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.SiteForm, null);
+			else if (_viewModel is DepartmentListViewModel)
+				window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.DepartmentForm, null);
+			else if (_viewModel is EmployeeListViewModel)
+				window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.EmployeeForm, null);
+			else
+				return;
 			window.Show();
 		}
 	}

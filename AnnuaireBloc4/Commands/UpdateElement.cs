@@ -31,7 +31,14 @@ namespace AnnuaireBloc4.Commands
 			if (_viewModel.SelectedItem == null)
 				return;
 			Window window = new Window();
-			window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.SiteForm, _viewModel.SelectedItem); ;
+			if (_viewModel is SiteListViewModel)
+				window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.SiteForm, _viewModel.SelectedItem);
+			else if (_viewModel is DepartmentListViewModel)
+				window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.DepartmentForm, _viewModel.SelectedItem);
+			else if (_viewModel is EmployeeListViewModel)
+				window.Content = _viewModel.ViewModelFactory.CreateFormViewModel(_viewModel, ViewType.EmployeeForm, _viewModel.SelectedItem);
+			else
+				return;
 			window.Show();
 		}
 	}

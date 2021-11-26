@@ -8,6 +8,13 @@
 		xmlns:control="clr-namespace:AnnuaireBloc4.Controls"
 		mc:Ignorable="d" WindowState="Maximized"
         Title="Annuaire Bloc 4" Height="450" Width="800">
+	<Window.Resources>
+		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+	</Window.Resources>			
+
+	<Window.InputBindings>
+		<KeyBinding Gesture="Alt+Shift+A" Command="{Binding ChangeAdminStatus}"/>
+	</Window.InputBindings>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto" />
