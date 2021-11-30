@@ -1,6 +1,7 @@
 ﻿using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Domain.Services;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,9 +49,7 @@ namespace AnnuaireBloc4.ViewModels
 
 		public override bool IsValid()
 		{
-			// TODO
-			return true;
+			return NewElem.CanCreate;
 		}
-
 	}
 }

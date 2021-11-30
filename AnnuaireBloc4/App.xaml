@@ -9,6 +9,7 @@
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="Styles/Common.xaml" />
 				<ResourceDictionary Source="Styles/NavigationBar.xaml" />
+				<ResourceDictionary Source="Styles/FormTextBox.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 
 			<!-- Link Views to their ViewModel -->

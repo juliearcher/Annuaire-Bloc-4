@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.Domain.Models
 {
-	public class Department : IApiModel
+	public class Department : IDepartment
 	{
 		public long Id { get; set; }
 		public string Name { get; set; }

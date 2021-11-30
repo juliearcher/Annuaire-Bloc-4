@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.Domain.Models
 {
-	public class Site : ISite
+	public interface ISite : IApiModel
 	{
-		public long Id { get; set; }
 		public string City { get; set; }
 	}
 }

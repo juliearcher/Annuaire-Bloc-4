@@ -1,6 +1,7 @@
 ﻿using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Domain.Services;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -85,8 +86,6 @@ namespace AnnuaireBloc4.ViewModels
 				OnPropertyChanged(nameof(SelectedDepartment));
 			}
 		}
-
-
 
 		public EmployeeFormViewModel(IEmployeesService employeesService, ISitesService sitesService, IDepartmentsService departmentsService, ListViewModelBase listViewModelBase, Employee employee)
 		{

@@ -24,30 +24,30 @@
 		<controls:SaveSaveAndCloseButtons Grid.Row="0"/>
 		<DockPanel Grid.Row="1">
 			<Label Content="Nom : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Surname}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding Employee.Surname, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="2">
 			<Label Content="Prénom : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Name}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding Employee.Name, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="3">
 			<Label Content="Téléphone fixe : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Phone}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding Employee.Phone, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="4">
 			<Label Content="Téléphone portable : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Mobile}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding Employee.Mobile, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="5">
 			<Label Content="E-mail : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Mail}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding Employee.Mail, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="6">
 			<Label Content="Site : " DockPanel.Dock="Left" />
 			<ComboBox ItemsSource="{Binding SiteList}" SelectedItem="{Binding SelectedSite}" DisplayMemberPath="{Binding City}" DockPanel.Dock="Right">
 				<ComboBox.ItemTemplate>
 					<DataTemplate>
-						<TextBlock Text="{Binding City}"/>
+						<TextBlock Text="{Binding City, UpdateSourceTrigger=PropertyChanged}"/>
 					</DataTemplate>
 				</ComboBox.ItemTemplate>
 			</ComboBox>
@@ -57,7 +57,7 @@
 			<ComboBox ItemsSource="{Binding DepartmentList}" SelectedItem="{Binding SelectedDepartment}" DisplayMemberPath="{Binding Name}" DockPanel.Dock="Right">
 				<ComboBox.ItemTemplate>
 					<DataTemplate>
-						<TextBlock Text="{Binding Name}"/>
+						<TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
 					</DataTemplate>
 				</ComboBox.ItemTemplate>
 			</ComboBox>

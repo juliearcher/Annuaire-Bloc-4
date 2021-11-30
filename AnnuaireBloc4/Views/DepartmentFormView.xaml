@@ -20,7 +20,7 @@
 		<controls:SaveSaveAndCloseButtons Grid.Row="0"/>
 		<DockPanel Grid.Row="1">
 			<Label Content="Nom : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Department.Name}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding Department.Name, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 	</Grid>
 </UserControl>

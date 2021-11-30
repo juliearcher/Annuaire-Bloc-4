@@ -24,5 +24,10 @@ namespace AnnuaireBloc4.Views
 		{
 			InitializeComponent();
 		}
+
+		private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+
+		}
 	}
 }
