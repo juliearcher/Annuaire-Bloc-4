@@ -31,6 +31,9 @@ namespace AnnuaireBloc4.Commands
 
 		public void Execute(object parameter)
 		{
+			/*
+			 * Change tab
+			 */
 			if (parameter is ViewType)
 			{
 				ViewType viewType = (ViewType)parameter;

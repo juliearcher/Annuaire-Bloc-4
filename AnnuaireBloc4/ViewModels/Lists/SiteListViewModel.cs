@@ -36,6 +36,9 @@ namespace AnnuaireBloc4.ViewModels
 			}
 		}
 
+		/*
+		 *  Search in city name
+		 */
 		private string _searchFilter;
 		public string SearchFilter
 		{

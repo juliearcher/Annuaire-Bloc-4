@@ -32,6 +32,9 @@ namespace AnnuaireBloc4.ViewModels
 			}
 		}
 
+		/*
+		 *  Search in employee name and surname
+		 */
 		private string _searchFilter;
 		public string SearchFilter
 		{

@@ -17,6 +17,9 @@ namespace AnnuaireBloc4.PrepAPI
 			this.BaseAddress = new Uri("https://localhost:5001/api/");
 		}
 
+		/*
+		 * Get
+		 */
 		public async Task<T>	GetAsync<T>(string uri)
 		{
 			HttpResponseMessage response = await GetAsync(uri);
@@ -30,6 +33,9 @@ namespace AnnuaireBloc4.PrepAPI
 			return JsonConvert.DeserializeObject<T>(jsonResponse);
 		}
 
+		/*
+		 * Create 
+		 */
 		public async Task<T> PostAsync<U, T>(string uri, U elem) where U : IApiModel
 		{
 			StringContent content = new StringContent(JsonConvert.SerializeObject(elem), Encoding.UTF8, "application/json");
@@ -45,6 +51,9 @@ namespace AnnuaireBloc4.PrepAPI
 			return JsonConvert.DeserializeObject<T>(jsonResponse);
 		}
 
+		/*
+		 * Update 
+		 */
 		public async Task<int> PutAsync<U, T>(string uri, U elem) where U : IApiModel
 		{
 			StringContent content = new StringContent(JsonConvert.SerializeObject(elem), Encoding.UTF8, "application/json");
@@ -60,6 +69,9 @@ namespace AnnuaireBloc4.PrepAPI
 			return (int)response.StatusCode;
 		}
 
+		/*
+		 * Delete 
+		 */
 		public async Task<int> CustomDeleteAsync(string uri)
 		{
 			HttpResponseMessage response = await DeleteAsync(uri);

@@ -33,6 +33,10 @@ namespace AnnuaireBloc4.ViewModels
 				OnPropertyChanged(nameof(DepartmentList));
 			}
 		}
+
+		/*
+		 *  Search in department name
+		 */
 		private string _searchFilter;
 		public string SearchFilter
 		{
