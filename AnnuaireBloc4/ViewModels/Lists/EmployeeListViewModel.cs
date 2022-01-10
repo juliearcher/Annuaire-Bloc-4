@@ -17,6 +17,7 @@ namespace AnnuaireBloc4.ViewModels
 	{
 		private readonly IEmployeesService _employeesService;
 
+		private IEnumerable<Employee> _employeeInitialList;
 		private IEnumerable<Employee> _employeeList;
 		public IEnumerable<Employee> EmployeeList
 		{
@@ -31,10 +32,29 @@ namespace AnnuaireBloc4.ViewModels
 			}
 		}
 
+		private string _searchFilter;
+		public string SearchFilter
+		{
+			get
+			{
+				return _searchFilter;
+			}
+			set
+			{
+				if (_searchFilter != value)
+				{
+					_searchFilter = value.ToLower();
+					EmployeeList = _employeeInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter) || d.Surname.ToLower().Contains(_searchFilter));
+					OnPropertyChanged(nameof(SearchFilter));
+				}
+			}
+		}
+
+
 		public EmployeeListViewModel(IEmployeesService employeesService, IViewModelAbstractFactory viewModelFactory)
 		{
 			_employeesService = employeesService;
-			EmployeeList = new ObservableCollection<Employee>();
+			_employeeInitialList = new ObservableCollection<Employee>();
 			ViewModelFactory = viewModelFactory;
 		}
 
@@ -51,7 +71,8 @@ namespace AnnuaireBloc4.ViewModels
 			{
 				if (task.Exception == null)
 				{
-					EmployeeList = task.Result;
+					_employeeInitialList = task.Result.OrderBy(employee => employee.Surname + " " + employee.Name);
+					EmployeeList = _employeeInitialList;
 				}
 			});
 		}

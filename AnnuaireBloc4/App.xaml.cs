@@ -37,16 +37,22 @@ namespace AnnuaireBloc4
 			services.AddSingleton<IEmployeesService, EmployeesService>();
 			services.AddSingleton<ISitesService, SitesService>();
 
+			#region Add ViewModel List Factories to ServiceCollecton
 			services.AddSingleton<IViewModelAbstractFactory, ViewModelAbstractFactory>();
 			services.AddSingleton<IViewModelListFactory<HomeViewModel>, HomeViewModelFactory>();
 			services.AddSingleton<IViewModelListFactory<EmployeesViewModel>, EmployeesViewModelFactory>();
 			services.AddSingleton<IViewModelListFactory<DepartmentListViewModel>, DepartmentListViewModelFactory>();
 			services.AddSingleton<IViewModelListFactory<EmployeeListViewModel>, EmployeeListViewModelFactory>();
 			services.AddSingleton<IViewModelListFactory<SiteListViewModel>, SiteListViewModelFactory>();
+			#endregion
 
+			#region Add ViewModel Form Factories to ServiceCollecton
 			services.AddSingleton<IViewModelFormFactory<SiteFormViewModel>, SiteFormViewModelFactory>();
 			services.AddSingleton<IViewModelFormFactory<DepartmentFormViewModel>, DepartmentFormViewModelFactory>();
 			services.AddSingleton<IViewModelFormFactory<EmployeeFormViewModel>, EmployeeFormViewModelFactory>();
+			#endregion
+
+			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 			services.AddScoped<INavigator, Navigator>();
 			services.AddScoped<MainWindowViewModel>();

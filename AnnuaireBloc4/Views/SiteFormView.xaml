@@ -23,7 +23,7 @@
 		<controls:SaveSaveAndCloseButtons Grid.Row="0"/>
 		<DockPanel Grid.Row="1">
 			<Label Content="Ville : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding NewElem.City, UpdateSourceTrigger=PropertyChanged}"  DockPanel.Dock="Right" TextChanged="TextBox_TextChanged" />
+			<TextBox Text="{Binding NewElem.City, UpdateSourceTrigger=PropertyChanged}"  DockPanel.Dock="Right"  />
 		</DockPanel>
 	</Grid>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Domain.Services;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,17 @@ namespace AnnuaireBloc4.ViewModels.Factories
 	public class SiteFormViewModelFactory : IViewModelFormFactory<SiteFormViewModel>
 	{
 		private readonly ISitesService _siteService;
+		private IMapper _mapper;
 
-		public SiteFormViewModelFactory(ISitesService sitesService)
+		public SiteFormViewModelFactory(ISitesService sitesService, IMapper mapper)
 		{
 			_siteService = sitesService;
+			_mapper = mapper;
 		}
 
 		public SiteFormViewModel CreateViewModel(ListViewModelBase viewModelBase, IApiModel elem)
 		{
-			return new SiteFormViewModel(_siteService, viewModelBase, (Site)elem);
+			return new SiteFormViewModel(_siteService, _mapper, viewModelBase, (Site)elem);
 		}
 	}
 }

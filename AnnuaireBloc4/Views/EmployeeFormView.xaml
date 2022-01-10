@@ -7,7 +7,10 @@
 			 xmlns:controls="clr-namespace:AnnuaireBloc4.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-	<Grid>
+	<Grid  Grid.IsSharedSizeScope="True">
+		<Grid.Resources>
+			<Style TargetType="TextBox" BasedOn="{StaticResource FormTextBox}"/>
+		</Grid.Resources>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto"/>
 			<RowDefinition Height="auto"/>
@@ -24,23 +27,23 @@
 		<controls:SaveSaveAndCloseButtons Grid.Row="0"/>
 		<DockPanel Grid.Row="1">
 			<Label Content="Nom : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Surname, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding NewElem.Surname, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="2">
 			<Label Content="Prénom : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Name, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding NewElem.Name, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="3">
 			<Label Content="Téléphone fixe : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Phone, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding NewElem.Phone, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="4">
 			<Label Content="Téléphone portable : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Mobile, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding NewElem.Mobile, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="5">
 			<Label Content="E-mail : " DockPanel.Dock="Left" />
-			<TextBox Text="{Binding Employee.Mail, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
+			<TextBox Text="{Binding NewElem.Mail, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Right" />
 		</DockPanel>
 		<DockPanel Grid.Row="6">
 			<Label Content="Site : " DockPanel.Dock="Left" />

@@ -1,5 +1,7 @@
 ﻿using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Domain.Services;
+using AnnuaireBloc4.Models;
+using AutoMapper;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,18 +47,7 @@ namespace AnnuaireBloc4.ViewModels
 		}
 
 		private Employee _employee;
-		public Employee Employee
-		{
-			get
-			{
-				return _employee;
-			}
-			set
-			{
-				_employee = value;
-				OnPropertyChanged(nameof(Employee));
-			}
-		}
+
 		private Site _selectedSite;
 		public Site SelectedSite
 		{
@@ -67,7 +58,7 @@ namespace AnnuaireBloc4.ViewModels
 			set
 			{
 				_selectedSite = value;
-				Employee.SitesId = _selectedSite.Id;
+				(NewElem as EmployeeDataError).SitesId = _selectedSite.Id;
 				OnPropertyChanged(nameof(SelectedSite));
 			}
 		}
@@ -82,19 +73,20 @@ namespace AnnuaireBloc4.ViewModels
 			set
 			{
 				_selectedDepartment = value;
-				Employee.DepartmentsId = _selectedDepartment.Id;
+				(NewElem as EmployeeDataError).DepartmentsId = _selectedDepartment.Id;
 				OnPropertyChanged(nameof(SelectedDepartment));
 			}
 		}
 
-		public EmployeeFormViewModel(IEmployeesService employeesService, ISitesService sitesService, IDepartmentsService departmentsService, ListViewModelBase listViewModelBase, Employee employee)
+		public EmployeeFormViewModel(IEmployeesService employeesService, ISitesService sitesService, IDepartmentsService departmentsService, IMapper mapper, ListViewModelBase listViewModelBase, Employee employee)
 		{
 			_employeesService = employeesService;
 			_sitesService = sitesService;
 			_departmentsService = departmentsService;
 			ListViewModelBase = listViewModelBase;
+			_mapper = mapper;
 			_mode = employee == null ? EditMode.CREATE : EditMode.UPDATE;
-			Employee = employee ?? new Employee();
+			NewElem = new EmployeeDataError(employee ?? new Employee());
 			LoadSites();
 			LoadDepartments();
 		}
@@ -106,8 +98,8 @@ namespace AnnuaireBloc4.ViewModels
 				if (task.Exception == null)
 				{
 					SiteList = task.Result;
-					if (Employee != null && Employee.SitesId != 0)
-						SelectedSite = SiteList.FirstOrDefault(site => site.Id == Employee.SitesId);
+					if (NewElem != null && (NewElem as EmployeeDataError).SitesId != 0)
+						SelectedSite = SiteList.FirstOrDefault(site => site.Id == (NewElem as EmployeeDataError).SitesId);
 				}
 			});
 		}
@@ -118,8 +110,8 @@ namespace AnnuaireBloc4.ViewModels
 				if (task.Exception == null)
 				{
 					DepartmentList = task.Result;
-					if (Employee != null && Employee.DepartmentsId != 0)
-						SelectedDepartment = DepartmentList.FirstOrDefault(department => department.Id == Employee.DepartmentsId);
+					if (NewElem != null && (NewElem as EmployeeDataError).DepartmentsId != 0)
+						SelectedDepartment = DepartmentList.FirstOrDefault(department => department.Id == (NewElem as EmployeeDataError).DepartmentsId);
 				}
 			});
 		}
@@ -128,19 +120,18 @@ namespace AnnuaireBloc4.ViewModels
 		{
 			if (_mode == EditMode.CREATE)
 			{
-				await _employeesService.CreateEmployee(Employee);
+				await _employeesService.CreateEmployee(_mapper.Map<Employee>(NewElem));
 			}
 			else
 			{
-				await _employeesService.UpdateEmployee(Employee);
+				await _employeesService.UpdateEmployee(_mapper.Map<Employee>(NewElem));
 			}
 			return true;
 		}
 
 		public override bool IsValid()
 		{
-			// TODO
-			return true;
+			return NewElem.CanCreate;
 		}
 	}
 }

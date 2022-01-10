@@ -1,5 +1,7 @@
 ﻿using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Domain.Services;
+using AnnuaireBloc4.Models;
+using AutoMapper;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,37 +14,27 @@ namespace AnnuaireBloc4.ViewModels
 	public class DepartmentFormViewModel : FormViewModelBase
 	{
 		private readonly IDepartmentsService _departmentsService;
-		private Department _department;
-		public Department Department
-		{
-			get
-			{
-				return _department;
-			}
-			set
-			{
-				_department = value;
-				OnPropertyChanged(nameof(Department));
-			}
-		}
 
-		public DepartmentFormViewModel(IDepartmentsService departmentsService, ListViewModelBase listViewModelBase, Department department)
+		public DepartmentFormViewModel(IDepartmentsService departmentsService, IMapper mapper, ListViewModelBase listViewModelBase, Department department)
 		{
 			_departmentsService = departmentsService;
+			_mapper = mapper;
 			ListViewModelBase = listViewModelBase;
 			_mode = department == null ? EditMode.CREATE : EditMode.UPDATE;
-			Department = department ?? new Department();
+			NewElem = new DepartmentDataError(department ?? new Department());
 		}
 
 		public async override Task<bool> SendToAPI()
 		{
 			if (_mode == EditMode.CREATE)
 			{
-				await _departmentsService.CreateDepartment(Department);
+				Department newDep = await _departmentsService.CreateDepartment(_mapper.Map<Department>(NewElem));
+				(NewElem as DepartmentDataError).Id = newDep.Id;
+				_mode = EditMode.UPDATE;
 			}
 			else
 			{
-				await _departmentsService.UpdateDepartment(Department);
+				await _departmentsService.UpdateDepartment(_mapper.Map<Department>(NewElem));
 			}
 			return true;
 		}

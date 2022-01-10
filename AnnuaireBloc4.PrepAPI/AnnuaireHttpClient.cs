@@ -21,7 +21,12 @@ namespace AnnuaireBloc4.PrepAPI
 		{
 			HttpResponseMessage response = await GetAsync(uri);
 			string jsonResponse = await response.Content.ReadAsStringAsync();
-
+			if (response.StatusCode != System.Net.HttpStatusCode.OK)
+			{
+				var result = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonResponse);
+				var errors = result.GetValueOrDefault("errors");
+				throw new ApiException(result.GetValueOrDefault("title")?.ToString(), CleanString(errors.ToString()));
+			}
 			return JsonConvert.DeserializeObject<T>(jsonResponse);
 		}
 
@@ -31,17 +36,11 @@ namespace AnnuaireBloc4.PrepAPI
 
 			HttpResponseMessage response = await PostAsync(uri, content);
 			string jsonResponse = await response.Content.ReadAsStringAsync();
-			if ((int)response.StatusCode != 201)
+			if (response.StatusCode != System.Net.HttpStatusCode.Created)
 			{
-				var error = JsonConvert.DeserializeObject<ApiError>(jsonResponse);
-				if (error.Errors == null)
-				{
-					throw new ApiException(error.Title);
-				}
-				else
-				{
-					throw new ApiException(error.Errors.ToString());
-				}
+				var result = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonResponse);
+				var errors = result.GetValueOrDefault("errors");
+				throw new ApiException(result.GetValueOrDefault("title")?.ToString(), CleanString(errors.ToString()));
 			}
 			return JsonConvert.DeserializeObject<T>(jsonResponse);
 		}
@@ -51,18 +50,12 @@ namespace AnnuaireBloc4.PrepAPI
 			StringContent content = new StringContent(JsonConvert.SerializeObject(elem), Encoding.UTF8, "application/json");
 
 			HttpResponseMessage response = await PutAsync(uri, content);
-			if ((int)response.StatusCode != 204)
+			if (response.StatusCode != System.Net.HttpStatusCode.NoContent)
 			{
 				string jsonResponse = await response.Content.ReadAsStringAsync();
-				var error = JsonConvert.DeserializeObject<ApiError>(jsonResponse);
-				if (error.Errors == null)
-				{
-					throw new ApiException(error.Title);
-				}
-				else
-				{
-					throw new ApiException(error.Errors.ToString());
-				}
+				var result = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonResponse);
+				var errors = result.GetValueOrDefault("errors");
+				throw new ApiException(result.GetValueOrDefault("title")?.ToString(), CleanString(errors.ToString()));
 			}
 			return (int)response.StatusCode;
 		}
@@ -70,20 +63,27 @@ namespace AnnuaireBloc4.PrepAPI
 		public async Task<int> CustomDeleteAsync(string uri)
 		{
 			HttpResponseMessage response = await DeleteAsync(uri);
-			if ((int)response.StatusCode != 204)
+			if (response.StatusCode != System.Net.HttpStatusCode.NoContent)
 			{
 				string jsonResponse = await response.Content.ReadAsStringAsync();
-				var error = JsonConvert.DeserializeObject<ApiError>(jsonResponse);
-				if (error.Errors == null)
-				{
-					throw new ApiException(error.Title);
-				}
-				else
-				{
-					throw new ApiException(error.Errors.ToString());
-				}
+				var result = JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonResponse);
+				var errors = result.GetValueOrDefault("errors");
+				throw new ApiException(result.GetValueOrDefault("title")?.ToString(), CleanString(errors.ToString()));
 			}
 			return (int)response.StatusCode;
+		}
+
+		private string CleanString(string s)
+		{
+			StringBuilder sb = new StringBuilder();
+			foreach (char c in s)
+			{
+				if (c != '{' && c != '}' && c != '"' && c != ',' && c != '[' && c != ']')
+				{
+					sb.Append(c);
+				}
+			}
+			return sb.ToString().Replace(": \r\n", ":").Replace("\r\n \r\n", "\r\n").Replace("    ", " ");
 		}
 	}
 }

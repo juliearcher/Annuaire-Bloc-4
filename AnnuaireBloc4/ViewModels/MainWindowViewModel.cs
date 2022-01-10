@@ -14,6 +14,9 @@ namespace AnnuaireBloc4.ViewModels
 {
 	public class MainWindowViewModel : ViewModelBase
 	{
+		/*
+		 * Navigation bar, used to change the current viewmodel
+		 */
 		public INavigator Navigator { get; set; }
 		public static AdministratorDependency Administrator { get; set; }
 		public ICommand ChangeAdminStatus => new AdministratorCommand();
@@ -43,10 +46,12 @@ namespace AnnuaireBloc4.ViewModels
 				window.Width = 300;
 				window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 				window.ShowDialog();
-				//Administrator.Administrator = true;
 			}
 		}
 
+		/*
+		 * Allows to use a changing static property in bindings
+		 */
 		public class AdministratorDependency : DependencyObject
 		{
 			public static readonly DependencyProperty AdministratorProperty =

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace AnnuaireBloc4.Models
 {
+	/*
+	 * Implement INotifyDataErrorInfo wich will allow the view to change if there are errors
+	 */
 	public class DataErrorModel : ObservableObject, INotifyDataErrorInfo
 	{
 		protected readonly Dictionary<string, List<string>> _propertyErrors = new Dictionary<string, List<string>>();

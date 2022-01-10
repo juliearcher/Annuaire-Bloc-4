@@ -1,6 +1,7 @@
 ﻿using AnnuaireBloc4.Commands;
 using AnnuaireBloc4.Domain.Models;
 using AnnuaireBloc4.Models;
+using AutoMapper;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace AnnuaireBloc4.ViewModels
 		}
 
 		protected EditMode _mode = EditMode.UPDATE;
+
+		protected IMapper _mapper;
 
 		private DataErrorModel _newElem;
 		public DataErrorModel NewElem

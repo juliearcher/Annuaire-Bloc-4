@@ -16,6 +16,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 		private readonly IViewModelFormFactory<DepartmentFormViewModel> _departmentFormViewModelFactory;
 		private readonly IViewModelFormFactory<EmployeeFormViewModel> _employeeFormViewModelFactory;
 
+		/*
+		 * Add all viewmodel factories to main factory
+		 */
 		public ViewModelAbstractFactory(IViewModelListFactory<HomeViewModel> homeViewModelFactory, IViewModelListFactory<EmployeesViewModel> employeesViewModelFactory, IViewModelFormFactory<SiteFormViewModel> siteFormViewModelFactory, IViewModelFormFactory<DepartmentFormViewModel> departmentFormViewModelFactory, IViewModelFormFactory<EmployeeFormViewModel> employeeFormViewModelFactory)
 		{
 			_homeViewModelFactory = homeViewModelFactory;
@@ -25,6 +28,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			_employeeFormViewModelFactory = employeeFormViewModelFactory;
 		}
 
+		/*
+		 * Creates Form ViewModels
+		 */
 		public ViewModelBase CreateFormViewModel(ListViewModelBase viewModelBase, ViewType viewType, IApiModel elem)
 		{
 			switch (viewType)
@@ -40,6 +46,9 @@ namespace AnnuaireBloc4.ViewModels.Factories
 			}
 		}
 
+		/*
+		 * Creates Tab ViewModels
+		 */
 		public ViewModelBase CreateViewModel(ViewType viewType)
 		{
 			switch (viewType)
