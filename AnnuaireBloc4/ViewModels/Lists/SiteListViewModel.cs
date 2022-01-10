@@ -48,7 +48,7 @@ namespace AnnuaireBloc4.ViewModels
 				if (_searchFilter != value)
 				{
 					_searchFilter = value.ToLower();
-					SiteList = _siteInitialList.Where(d => d.City.ToLower().Contains(_searchFilter));
+					SiteList = _siteInitialList.Where(d => d.City.ToLower().Contains(_searchFilter ?? ""));
 					OnPropertyChanged(nameof(SearchFilter));
 				}
 			}
@@ -75,7 +75,7 @@ namespace AnnuaireBloc4.ViewModels
 				if (task.Exception == null)
 				{
 					_siteInitialList = task.Result;
-					SiteList = _siteInitialList;
+					SiteList = _siteInitialList.Where(d => d.City.ToLower().Contains(_searchFilter ?? ""));
 				}
 			});
 		}

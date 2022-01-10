@@ -44,7 +44,7 @@ namespace AnnuaireBloc4.ViewModels
 				if (_searchFilter != value)
 				{
 					_searchFilter = value.ToLower();
-					EmployeeList = _employeeInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter) || d.Surname.ToLower().Contains(_searchFilter));
+					EmployeeList = _employeeInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter ?? "") || d.Surname.ToLower().Contains(_searchFilter ?? ""));
 					OnPropertyChanged(nameof(SearchFilter));
 				}
 			}
@@ -72,7 +72,7 @@ namespace AnnuaireBloc4.ViewModels
 				if (task.Exception == null)
 				{
 					_employeeInitialList = task.Result.OrderBy(employee => employee.Surname + " " + employee.Name);
-					EmployeeList = _employeeInitialList;
+					EmployeeList = _employeeInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter ?? "") || d.Surname.ToLower().Contains(_searchFilter ?? ""));
 				}
 			});
 		}

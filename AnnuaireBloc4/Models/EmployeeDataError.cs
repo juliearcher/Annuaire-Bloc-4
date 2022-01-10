@@ -100,7 +100,11 @@ namespace AnnuaireBloc4.Models
 			{
 				_mail = value;
 				ClearErrors(nameof(Mail));
-				if (_mail != null && _mail?.Trim().Length != 0)
+				if (_mail == null || _mail?.Trim().Length == 0)
+				{
+					AddError(nameof(Mail), "Champ obligatoire");
+				}
+				else
 				{
 					try
 					{

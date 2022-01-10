@@ -45,7 +45,7 @@ namespace AnnuaireBloc4.ViewModels
 				if (_searchFilter != value)
 				{
 					_searchFilter = value.ToLower();
-					DepartmentList = _departmentInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter));
+					DepartmentList = _departmentInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter ?? ""));
 					OnPropertyChanged(nameof(SearchFilter));
 				}
 			}
@@ -72,7 +72,7 @@ namespace AnnuaireBloc4.ViewModels
 				if (task.Exception == null)
 				{
 					_departmentInitialList = task.Result;
-					DepartmentList = _departmentInitialList;
+					DepartmentList = _departmentInitialList.Where(d => d.Name.ToLower().Contains(_searchFilter ?? ""));
 				}
 			});
 		}
