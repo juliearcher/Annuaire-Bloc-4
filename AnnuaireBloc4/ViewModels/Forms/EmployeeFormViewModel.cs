@@ -120,7 +120,9 @@ namespace AnnuaireBloc4.ViewModels
 		{
 			if (_mode == EditMode.CREATE)
 			{
-				await _employeesService.CreateEmployee(_mapper.Map<Employee>(NewElem));
+				Employee newEmp = await _employeesService.CreateEmployee(_mapper.Map<Employee>(NewElem));
+				(NewElem as EmployeeDataError).Id = newEmp.Id;
+				_mode = EditMode.UPDATE;
 			}
 			else
 			{
